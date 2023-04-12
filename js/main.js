@@ -16,6 +16,7 @@ navItem = document.querySelectorAll('.nav-item');
 pageid = 3;
 let showLoaderBool = false;
 navItem[pageid].style.backgroundColor = '#004753';
+let pageMove = false;
 
 const natWrapper = document.querySelector('.natification-wrapper');
 natWrapper.addEventListener('click', function(){
@@ -38,15 +39,17 @@ for(let i = 0; i < navItem.length; i++){
         // if(!showLoader(3000)) return;
         // pages[i].style.display = "flex";
         // pages[pageid].style.display = "none";
-        if(i === pageid) return;
+        if(i === pageid || pageMove) return;
         setTimeout(() => {
             pages[i].style.transform = "scaleY(1)";
             pages[i].style.transform = "scaleY(1)";
+            pageMove = false;
             
         }, 300)
 
         pages[pageid].style.transform = "scaleY(0)";
         pages[pageid].style.transform = "scaleY(0)";
+        pagaMove = true;
         
 
         navItem[i].style.backgroundColor = '#004753';
