@@ -393,10 +393,11 @@ body, html, .wrapper, .wrapper-pages, .wrapper-auth, .wrapper-register, .wrapper
   flex-direction: column;
   overflow-x: auto;
 }
-.matchs-video-wrapper>img{
+.matchs-video-wrapper>img, .matchs-wrapper>img{
   margin-top: 15px;
   margin-bottom: 40px;
 }
+
 .video-wrapper:last-child{
   margin-bottom: 15px;
 }
