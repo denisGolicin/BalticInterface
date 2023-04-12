@@ -339,6 +339,9 @@ body, html, .wrapper, .wrapper-pages, .wrapper-auth, .wrapper-register, .wrapper
   font-size: 18px;
   z-index: 10;
 }
+.natification-wrapper>div>p{
+  text-align: center;
+}
 .natification-wrapper>div>button{
   width: 50%;
   padding: 10px;
