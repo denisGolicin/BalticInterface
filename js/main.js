@@ -56,6 +56,10 @@ for(let i = 0; i < navItem.length; i++){
         navItem[pageid].style.backgroundColor = '#00465300';
 
         pageid = i;
+
+        if(i === 0){
+            nat.style.display = 'flex';
+        }
     });
 
     if(i === 3) continue;
