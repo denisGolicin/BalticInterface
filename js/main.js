@@ -118,7 +118,7 @@ function showLoader(time = 100){
 }
 
 let xhr = new XMLHttpRequest();
-xhr.open('POST', 'https://fc-baltika.ru/news/', true);
+xhr.open('GET', 'https://fc-baltika.ru/news/', true);
 xhr.send();
 
 
