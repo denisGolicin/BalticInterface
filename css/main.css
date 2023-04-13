@@ -249,6 +249,9 @@ body, html, .wrapper, .wrapper-pages, .wrapper-auth, .wrapper-register, .wrapper
   align-items: center;
   flex-direction: column;
 }
+.news-container>p{
+  text-align: center;
+}
 .news-container>img{
   width: 96%;
   margin-top: 10px;

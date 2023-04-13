@@ -118,7 +118,7 @@ function showLoader(time = 100){
 }
 
 let xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://fc-baltika.ru/news/', true);
+xhr.open('GET', 'https://site2.fc-baltika.ru/news/', true);
 xhr.send();
 
 
@@ -128,19 +128,31 @@ xhr.onreadystatechange = function() {
       
         let parser = new DOMParser();
         let htmlDoc = parser.parseFromString(responseText, 'text/html');
-        let links = htmlDoc.querySelectorAll('.col-md-4');
-        for (let i = 0; i < links.length; i++) {
-            console.log(links[i].href);
+        let news = [];
+        news = htmlDoc.querySelectorAll('.col-md-4');
+        for (let i = 0; i < news.length; i++) {
+
+            const images = news[i].getElementsByTagName('img');
+            //console.log(news[i].querySelector('.name').innerText);
+
+            const title = news[i].querySelector('.name').innerText;
+
+            const parentBlock = document.querySelector('.main-window-news');
+            const newBlock = document.createElement('div');
+            newBlock.className = 'news-container';
+
+            for (let i = 0; i < images.length; i++) {
+                const src = images[i].src.replace("file:///C:/", "https://site2.fc-baltika.ru/");
+
+                newBlock.innerHTML = `
+                <p>${title}</p>
+                <img src="${src}" alt="">
+                <button>Подробнее</button>`;
+                parentBlock.appendChild(newBlock);
+
+            }
+
         }
     }
 };
 
-// function handleResponse(data) {
-//     console.log(data);
-//   }
-  
-//   const script = document.createElement('script');
-//   script.src = 'https://fc-baltika.ru/news/';
-//   const data = document.body.appendChild(script);
-
-//   handleResponse(data)
