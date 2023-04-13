@@ -134,3 +134,13 @@ xhr.onreadystatechange = function() {
         }
     }
 };
+
+// function handleResponse(data) {
+//     console.log(data);
+//   }
+  
+//   const script = document.createElement('script');
+//   script.src = 'https://fc-baltika.ru/news/';
+//   const data = document.body.appendChild(script);
+
+//   handleResponse(data)
