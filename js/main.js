@@ -116,3 +116,21 @@ function showLoader(time = 100){
 
     return true;
 }
+
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://fc-baltika.ru/news/', true);
+xhr.send();
+
+
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      let responseText = xhr.responseText;
+      
+        let parser = new DOMParser();
+        let htmlDoc = parser.parseFromString(responseText, 'text/html');
+        let links = htmlDoc.getElementsByTagName('a');
+        for (let i = 0; i < links.length; i++) {
+            console.log(links[i].href);
+        }
+    }
+};
