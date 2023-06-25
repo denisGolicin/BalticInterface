@@ -1,3 +1,6 @@
+const authPage = document.querySelector('.authorization');
+const regPage = document.querySelector('.registration');
+
 const authEnter = document.querySelector('#authEnter');
 authEnter.addEventListener('click', function(){
     alert('test');
@@ -5,7 +8,14 @@ authEnter.addEventListener('click', function(){
 
 const regEnter = document.querySelector('#regEnter');
 regEnter.addEventListener('click', function(){
-    alert('test');
+    regPage.style.display = 'block';
+    authPage.style.display = 'none';
+});
+
+const _authEnter = document.querySelector('#_authEnter');
+_authEnter.addEventListener('click', function(){
+    regPage.style.display = 'none';
+    authPage.style.display = 'block';
 });
 
 const re_passEnter = document.querySelector('#re_passEnter');
