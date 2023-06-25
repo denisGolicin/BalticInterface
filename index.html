@@ -1,329 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/animation.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/adaptation.css">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ФК Балтика</title>
-
-	
-</head>
-	<body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<title>ФК Балтика</title>
+	</head>
+	<body>
+
 		<div class="wrapper">
 
-			<div class="wrapper-pages">
-
-				<div class="loader-page">
-					<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-				</div>
-
-				<div class="wrapper-auth">
-					<div class="auth-logo">
-						<img src="src/image/svg/auth-logo.svg" alt="">
+			<div class="page authorization">
+				
+				<div class="header">
+					<div class="header-logo">
+						<img src="src/logo.png" alt="">
 					</div>
-					<div class="auth-inputs">
-						<p class="auth-inputs-enter">ВХОД</p>
-						<input type="text" name="" id="" placeholder="Введите номер телефона">
-						<div style="width: 75%; max-width: 400px; margin-top: 5px; color: red; display: none;">
-							<p>Номер с таким телефон не существует</p>
-						</div>
-						<input type="password" name="" id="" placeholder="Пароль">
-						<p class="auth-inputs-recovery">Забыли пароль?</p>
-						<button>Вход</button>
-					</div>
-					<div class="auth-nav">
-						<p id="enter-client">Войти как гость</p>
-						<p id="button-register">Регистрация</p>
+					<div class="header-name">
+						<p>Добро пожаловать!</p>
 					</div>
 				</div>
 
-				<div class="wrapper-register">
-					<div class="auth-logo">
-						<img src="src/image/svg/auth-logo.svg" alt="">
-					</div>
-					<div class="auth-inputs">
-						<p class="auth-inputs-enter">Регистрация</p>
-						<input type="text" name="" id="" placeholder="Имя">
-						<div style="width: 75%; max-width: 400px; margin-top: 5px; color: red; display: none;">
-							<p>Номер с таким телефон не существует</p>
+				<div class="title">Авторизация</div>
+
+				<div class="form">
+					<div class="form-input">
+						<div class="input">
+							<input type="text" name="" id="" placeholder="Логин">
 						</div>
-						<input type="text" name="" id="" placeholder="Почта">
-						<input type="text" name="" id="" placeholder="Телефон">
-						<input type="text" name="" id="" placeholder="Пароль">
-
-						<div class="selects">
-							<div class="select-wrapper">
-								<input type="checkbox" id="scales" name="scales">
-								<label for="scales">Согласен(а) на обработку персональных данных</label>
-							</div>
-							<div class="select-wrapper">
-								<input type="checkbox" id="horns" name="horns">
-								<label for="horns">Согласен(а) на получение Push-уведомлений</label>
-							</div>
-						</div>
-
-						<button>Регистрация</button>
-					</div>
-					<div class="register-nav">
-						<p id="button-login">Уже есть аккаунт? <span style="border-bottom: 1px solid #fff;">ВОЙДИТЕ</span></p>
-					</div>
-				</div>
-
-				<div class="wrapper-main">
-					<div class="natification-wrapper">
-						<div>
-							<p>Вы не авторизированны!</p>
-							<button id="login-ent">Войти</button>
-						</div>
-					</div>
-					<div class="pages">
-						<div class="main-page">
-
-							<div class="profile-wrapper">
-								<div class="profile-nav">
-									<img src="src/image/svg/icons/notification.svg" alt="">
-									<img src="src/image/svg/icons/setting.svg" alt="">
-								</div>
-
-								<div class="profile-main">
-									<p>Ваш профиль</p>
-									<img src="src/image/profile.webp" alt="">
-									<p>Гость</p>
-									<div class="balls-wrapper">
-										<p>20</p>
-										<img src="src/image/svg/icons/fcLogo.svg" alt="">
-									</div>
-								</div>
-
-								<p class="title-question">Задания на футбалы</p>
-
-								<div class="question-item">
-									<div class="question-box">
-										<div class="icon-question">
-											<img src="src/image/svg/icons/winner.svg" alt="">
-										</div>
-										<p style="font-size: 18px;">Вперед, балтийцы!</p>
-										<div style="display: flex; justify-content: center; align-items: center;">
-											<p style="margin-right: 15px; color: #036BCA; font-size: 20px;">+20</p>
-											<img src="src/image/svg/icons/fcLogo.svg" alt="">
-										</div>
-									</div>
-	
-									<div class="question-box">
-										<div class="icon-question">
-											<img src="src/image/svg/icons/power.svg" alt="">
-										</div>
-										<p style="font-size: 18px;">Прогнозисты</p>
-										<div style="display: flex; justify-content: center; align-items: center;">
-											<p style="margin-right: 15px; color: #036BCA; font-size: 20px;">+90</p>
-											<img src="src/image/svg/icons/fcLogo.svg" alt="">
-										</div>
-									</div>
-	
-									<div class="question-box">
-										<div class="icon-question">
-											<img src="src/image/svg/icons/winner.svg" alt="">
-										</div>
-										<p style="font-size: 18px;">Вперед, балтийцы!</p>
-										<div style="display: flex; justify-content: center; align-items: center;">
-											<p style="margin-right: 15px; color: #036BCA; font-size: 20px;">+20</p>
-											<img src="src/image/svg/icons/fcLogo.svg" alt="">
-										</div>
-									</div>
-	
-									<div class="question-box">
-										<div class="icon-question">
-											<img src="src/image/svg/icons/power.svg" alt="">
-										</div>
-										<p style="font-size: 18px;">Прогнозисты</p>
-										<div style="display: flex; justify-content: center; align-items: center;">
-											<p style="margin-right: 15px; color: #036BCA; font-size: 20px;">+90</p>
-											<img src="src/image/svg/icons/fcLogo.svg" alt="">
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-	
-						<div class="main-page">
-							<div class="matchs-wrapper">
-								<img src="src/image/svg/matchs.svg" alt="">
-							</div>
-						</div>
-	
-						<div class="main-page">
-							<div class="matchs-video-wrapper">
-								<img src="src/image/svg/video.svg" alt="">
-								
-								<div class="video-item">
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/qLaUcSWMS98"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/l5MevJnjrug"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/XqZFm8rWLTY"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/SXuqKg0alT8"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/nQ8VaGlem8o"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/qLaUcSWMS98"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/qItJpWnRYGg"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/f4Jof0oKxqY"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/1uOk6aNISS8"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/xTbcSHXbRYI"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/9JT-kqW4adk"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/8ad2FXmAZD0"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-
-									<div class="video-wrapper">
-										<iframe 
-											src="https://www.youtube.com/embed/B16RgF4FLIw"
-											frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-										</iframe>
-									</div>
-	
-									
-								</div>
-
-								
-							</div>
-						</div>
-	
-						<div class="main-page">
-							<div class="main-wrapper-window">
-								<div class="buy-token">
-									<div></div>
-									<button id="buy-token">Купить билет</button>
-								</div>
-								<div class="main-window">
-									<div class="main-window-nav">
-										<div class="button-nav-main-window">
-											Новости
-										</div>
-										<div class="button-nav-main-window">
-											Календарь
-										</div>
-									</div>
-
-									<div class="main-window-news">
-										<!-- <div class="news-container">
-											<p>Заголовок</p>
-											<img src="src/image/svg/автобус@300x-8 1.svg" alt="">
-											<button>Подробнее</button>
-										</div> -->
-										
-									</div>
-								</div>
-							</div>
-						</div>
-	
-						<div class="main-page">
-							<div class="turner-wrapper">
-
-							</div>
-						</div>
-	
-						<div class="main-page">
-							<img width="100" src="src/image/svg/nav/buy.svg" alt="">
-						</div>
-	
-						<div class="main-page">
-							<div class="menu-wrapper">
-								<img src="src/image/svg/menuText.svg" alt="">
-								<div class="button-menu">ПОКУПКИ</div>
-								<div class="button-menu">НА МАТЧ!</div>
-								<div class="button-menu">КЛУБ</div>
-								<div class="button-menu">ФУТБАЛЛЫ</div>
-							</div>
+						<div class="input-notification">
+							<p>Ошибка!</p>
 						</div>
 					</div>
 
-					<div class="main-nav">
-						<img class="nav-item" src="src/image/svg/nav/user.svg" alt="">
-						<img class="nav-item" src="src/image/svg/nav/ball.svg" alt="">
-						<img class="nav-item" src="src/image/svg/nav/video.svg" alt="">
-						<img class="nav-item" src="src/image/svg/nav/main.svg" alt="">
-						<img class="nav-item" src="src/image/svg/nav/cup.svg" alt="">
-						<img class="nav-item" src="src/image/svg/nav/buy.svg" alt="">
-						<img class="nav-item" src="src/image/svg/nav/menu.svg" alt="">
+					<div class="form-input">
+						<div class="input">
+							<input type="text" name="" id="" placeholder="Пароль">
+						</div>
+						<div class="input-notification">
+							<p>Ошибка!</p>
+						</div>
+					</div>
+
+					<div class="form-button">
+						<div class="button">
+							<button>Войти</button>
+						</div>
 					</div>
 
 				</div>
+
+				<div class="terms">
+					<div class="terms-authorization">
+						<p>Зарегистровать аккаунт</p>
+					</div>
+				</div>
+
+				<div class="footer">
+					<div class="footer-box">
+						<p>Забыли пароль?</p>
+					</div>
+				</div>
+
+				
 
 			</div>
 
 		</div>
-		<script type="text/javascript" src="js/main.js"></script>
+
+		<script src="js/index.js"></script>
+		
 	</body>
 </html>
