@@ -40,6 +40,6 @@ showLoader("Загрузка приложения...", false, false);
 checkInternet = true;
 setTimeout(() => {
     if(checkInternet){
-        showLoader("Медленное интернет соединение", true /* кнопка */, false /* ошибка */, "brown");
+        showLoader("Медленное интернет соединение", false /* кнопка */, false /* ошибка */, "brown");
     }
 }, 7000);
