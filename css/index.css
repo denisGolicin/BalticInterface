@@ -11,6 +11,9 @@ html, body{
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @media (max-height: 600px) {
     .wrapper{
@@ -21,6 +24,7 @@ html, body{
 .page{
     width: 100%;
     height: 100%;
+    
 }
 
 .header{
@@ -84,7 +88,7 @@ html, body{
 }
 .form-input, .form-button{
     width: 80%;
-    max-width: 900px;
+    max-width: 700px;
     height: 100%;
 
     display: flex;
@@ -150,6 +154,7 @@ button{
 }
 .terms-authorization{
     width: 80%;
+    max-width: 700px;
     height: 30%;
     border-radius: 7px;
     background-image: url('../src/svg/main-bg.svg');
@@ -178,6 +183,7 @@ button{
 }
 .footer-box{
     width: 80%;
+    max-width: 700px;
     height: 100%;
 
     border-top: 2px solid #ffffffa1;
