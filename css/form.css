@@ -1,10 +1,10 @@
 .authorization{
     background-image: url('../src/svg/auth-bg.svg');
-    display: none;
+    display: block;
 }
 .registration{
     background-image: url('../src/svg/auth-bg.svg');
-    display: block;
+    display: none;
 }
 
 .header{
