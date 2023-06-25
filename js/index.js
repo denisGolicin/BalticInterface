@@ -27,3 +27,13 @@ window.addEventListener('load', function() {
     hideLoader();
     checkInternet = false;
 });
+
+const rulesEnter = document.querySelector('#rulesEnter');
+const rulesWrapper = document.querySelector('.rules-wrapper');
+const rulesBack = document.querySelector('#rulesBack');
+rulesEnter.addEventListener('click', function(){
+    rulesWrapper.style.display = 'block';
+});
+rulesBack.addEventListener('click', function(){
+    rulesWrapper.style.display = 'none';
+});

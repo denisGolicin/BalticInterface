@@ -214,3 +214,46 @@ input{
         font-size: 1.55vw;
     }
 }
+
+.rules-wrapper{
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    background-color: #fff;
+}
+.rules-text{
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+    color: #383838;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rules-text>p{
+    margin-top: 10px;
+    width: 90%;
+}
+.rules-button{
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rules-button>button{
+    width: 80%;
+    height: 60%;
+
+    background-image: url('../src/svg/main-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
