@@ -14,6 +14,7 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 @media (max-height: 600px) {
     .wrapper{
@@ -94,7 +95,6 @@ html, body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 
     overflow: hidden;
 }
@@ -106,22 +106,24 @@ html, body{
     height: 50%;
 }
 .input-notification{
-    width: 100%;
+    width: fit-content;
     margin-top: 7px;
     transform: translateY(300px);
     transition: .3s;
 }
 .input-notification>p{
-    color: brown;
-    font-size: 5vw;
-    border-top: 2px solid brown;
+    color: #fff;
+    font-size: 4vw;
+    background-color: brown;
+    padding: 5px;
+    border-radius: 7px;
     margin-left: 5px;
     margin-right: 5px;
     font-weight: bold;
 }
 @media (max-height: 600px), (min-width: 990px) {
     .input-notification>p{
-        font-size: 2.5vw;
+        font-size: 2vw;
     }
 }
 input, button{
@@ -134,12 +136,19 @@ input, button{
 button{
     background-color: #131313a1;
     color: #fff;
-    font-size: 5vw;
     font-weight: bold;
+    font-size: 5vw;
+}
+input{
+    font-size: 3.5vw;
+    padding-left: 20px;
 }
 @media (max-height: 600px), (min-width: 990px) {
     button{
         font-size: 2.5vw;
+    }
+    input{
+        font-size: 1.7vw;
     }
 }
 
@@ -193,6 +202,7 @@ button{
 }
 .footer-box>p{
     font-size: 5vw;
+    font-weight: bold;
 }
 @media (max-height: 600px), (min-width: 990px) {
     .footer-box>p{

@@ -6,17 +6,37 @@
 		
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/loader.css">
 		<title>ФК Балтика</title>
 	</head>
 	<body>
 
 		<div class="wrapper">
 
+			<div class="loader-wrapper">
+				<div class="loader-logo">
+					<img src="src/logo.png" alt="">
+				</div>
+				<div class="loader-img">
+					<img src="src/man.jpg" alt="man">
+				</div>
+				<div class="loader-text">
+					<p id="loaderText">Загрузка...</p>
+				</div>
+				<div class="loader-curcle">
+					<div class="curcle" id = "loaderCurcle"></div>
+					<div class="loader-button">
+						<button id = "loaderButton">Закрыть</button>
+					</div>
+				</div>
+			</div>
+			<script src="js/loader.js"></script>
+
 			<div class="page authorization">
 				
 				<div class="header">
 					<div class="header-logo">
-						<img src="src/logo.png" alt="">
+						<img src="src/logo.png" alt="logo">
 					</div>
 					<div class="header-name">
 						<p>Добро пожаловать!</p>
@@ -31,7 +51,7 @@
 							<input type="text" name="" id="" placeholder="Логин">
 						</div>
 						<div class="input-notification">
-							<p>Ошибка!</p>
+							<p>Заполните поле!</p>
 						</div>
 					</div>
 
@@ -40,26 +60,26 @@
 							<input type="text" name="" id="" placeholder="Пароль">
 						</div>
 						<div class="input-notification">
-							<p>Ошибка!</p>
+							<p>Неверный пароль!</p>
 						</div>
 					</div>
 
 					<div class="form-button">
 						<div class="button">
-							<button>Войти</button>
+							<button id="authEnter">Войти</button>
 						</div>
 					</div>
 
 				</div>
 
 				<div class="terms">
-					<div class="terms-authorization">
+					<div class="terms-authorization" id="regEnter">
 						<p>Зарегистровать аккаунт</p>
 					</div>
 				</div>
 
 				<div class="footer">
-					<div class="footer-box">
+					<div class="footer-box" id="re_passEnter">
 						<p>Забыли пароль?</p>
 					</div>
 				</div>
@@ -69,8 +89,6 @@
 			</div>
 
 		</div>
-
 		<script src="js/index.js"></script>
-		
 	</body>
 </html>
