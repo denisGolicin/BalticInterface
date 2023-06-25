@@ -15,4 +15,5 @@ re_passEnter.addEventListener('click', function(){
 
 window.addEventListener('load', function() {
     hideLoader();
+    checkInternet = false;
 });

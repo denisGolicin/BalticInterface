@@ -4,11 +4,13 @@ const loaderButton = document.querySelector('#loaderButton');
 const loaderCurcle = document.querySelector('#loaderCurcle');
 let getLoaderState = false;
 let getLoaderError = false;
+let checkInternet = false;
 
-function showLoader(text, state, error){
+function showLoader(text, state, error, color = '#157ae4'){
 
     if(getLoaderError) return;
 
+    loaderText.style.backgroundColor = color;
     loaderCurcle.style.display = 'none';
     loaderButton.style.display = 'none';
 
@@ -35,3 +37,9 @@ loaderButton.addEventListener('click', function(){
 });
 
 showLoader("Загрузка приложения...", false, false);
+checkInternet = true;
+setTimeout(() => {
+    if(checkInternet){
+        showLoader("Медленное интернет соединение", true /* кнопка */, false /* ошибка */, "brown");
+    }
+}, 7000);
