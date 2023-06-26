@@ -22,3 +22,16 @@ html, body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+.authorization{
+    background-image: url('../src/svg/auth-bg.svg');
+    display: block;
+}
+.registration{
+    background-image: url('../src/svg/auth-bg.svg');
+    display: none;
+}
+
+.main{
+    display: none;
+    background-color: #002843;
+}

@@ -6,7 +6,7 @@ let getLoaderState = false;
 let getLoaderError = false;
 let checkInternet = false;
 
-function showLoader(text, state, error, color = '#157ae4'){
+function showLoader(text, state, error, color = '#1338a9'){
 
     if(getLoaderError) return;
 

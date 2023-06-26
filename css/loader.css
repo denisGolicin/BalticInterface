@@ -41,7 +41,7 @@
 }
 .loader-text>p{
     width: fit-content;
-    background-color: #157ae4;
+    background-color: #1338a9;
     padding: 6px;
     border-radius: 5px;
 }
@@ -53,7 +53,7 @@
     width: 90px;
     height: 90px;
 
-    border-bottom: 5px solid #157ae4;
+    border-bottom: 5px solid #1338a9;
     border-radius: 50%;
 
     animation: anim-loader .7s infinite linear;

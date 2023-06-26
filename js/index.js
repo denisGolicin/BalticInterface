@@ -15,6 +15,8 @@ authEnter.addEventListener('click', function(){
     authPassMessage.style.transform = 'translateY(0)';
 
     if(countError > 0) return;
+    // запрос на авторизацию, пока открываю интерфейс
+    authPage.style.display = 'none';
 });
 
 const _regEnter = document.querySelector('#_regEnter');
@@ -39,6 +41,8 @@ _regEnter.addEventListener('click', function(){
     regMailMessage.style.transform = 'translateY(0)';
 
     if(countError > 0) return;
+    // запрос на регистрацию, пока открываю интерфейс
+
 });
 
 const regEnter = document.querySelector('#regEnter');
