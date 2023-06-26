@@ -1,5 +1,6 @@
 const authPage = document.querySelector('.authorization');
 const regPage = document.querySelector('.registration');
+const mainPage = document.querySelector('.main');
 
 const authEnter = document.querySelector('#authEnter');
 authEnter.addEventListener('click', function(){
@@ -17,6 +18,7 @@ authEnter.addEventListener('click', function(){
     if(countError > 0) return;
     // запрос на авторизацию, пока открываю интерфейс
     authPage.style.display = 'none';
+    mainPage.style.display = 'block';
 });
 
 const _regEnter = document.querySelector('#_regEnter');
