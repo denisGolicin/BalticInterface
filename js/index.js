@@ -3,7 +3,42 @@ const regPage = document.querySelector('.registration');
 
 const authEnter = document.querySelector('#authEnter');
 authEnter.addEventListener('click', function(){
-    alert('test');
+    let countError = 0;
+    if(!validLogin(authLogin, authLoginMessage, "button")){
+        countError++;
+    }
+    if(!validPass(authPass, authPassMessage, "button")){
+        countError++;
+    }
+
+    authLoginMessage.style.transform = 'translateY(0)';
+    authPassMessage.style.transform = 'translateY(0)';
+
+    if(countError > 0) return;
+});
+
+const _regEnter = document.querySelector('#_regEnter');
+_regEnter.addEventListener('click', function(){
+    let countError = 0;
+    if(!validLogin(regLogin, regLoginMessage, "button")){
+        countError++;
+    }
+    if(!validPass(regPass, regPassMessage, "button")){
+        countError++;
+    }
+    if(!validPhone(regPhone, regPhoneMessage, "button")){
+        countError++;
+    }
+    if(!validMail(regMail, regMailMessage, "button")){
+        countError++;
+    }
+
+    regLoginMessage.style.transform = 'translateY(0)';
+    regPassMessage.style.transform = 'translateY(0)';
+    regPhoneMessage.style.transform = 'translateY(0)';
+    regMailMessage.style.transform = 'translateY(0)';
+
+    if(countError > 0) return;
 });
 
 const regEnter = document.querySelector('#regEnter');

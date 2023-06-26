@@ -44,94 +44,122 @@ regMail.addEventListener('input', function(event) {
     
 });
 
-function validLogin(event, message){
-    const value = event.target.value;
+function validLogin(event, message, type){
+    let value;
+    if(type == 'button'){
+        value = event.value;
+    } else {
+        value = event.target.value;
+    }
     message.style.backgroundColor = "brown";
     if(value.length <= 0){
         message.innerHTML = "Заполните поле!";
-        return;
+        return false;
     } else if(!/^[a-zA-Z0-9]+$/.test(value)) {
         message.innerHTML = "Недопустимые символы!";
-        return;
+        return false;
     } else if (/^[0-9]+$/.test(value)){
         message.innerHTML = "Добавте символы: a-z | A-Z";
-        return;
+        return false;
     } else if (value.length < 8){
         message.innerHTML = "Слишком короткий логин!";
-        return;
+        return false;
     } else if (value.length > 16){
         message.innerHTML = "Слишком длинный логин!";
-        return;
+        return false;
     } 
 
     message.innerHTML = "Поле заполнено!";
     message.style.backgroundColor = "green";
+
+    return true;
 }
 
-function validPass(event, message){
-    const value = event.target.value;
+function validPass(event, message, type){
+    let value;
+    if(type == 'button'){
+        value = event.value;
+    } else {
+        value = event.target.value;
+    }
     message.style.backgroundColor = "brown";
     if(value.length <= 0){
         message.innerHTML = "Заполните поле!";
-        return;
+        return false;
     } else if(!/^[a-zA-Z0-9]+$/.test(value)) {
         message.innerHTML = "Недопустимые символы!";
-        return;
+        return false;
     } else if (/^[0-9]+$/.test(value)){
         message.innerHTML = "Добавте символы: a-z | A-Z";
-        return;
+        return false;
     } else if (value.length < 8){
         message.innerHTML = "Слишком короткий пароль!";
-        return;
+        return false;
     } else if (value.length > 16){
         message.innerHTML = "Слишком длинный пароль!";
-        return;
+        return false;
     } 
 
     message.innerHTML = "Поле заполнено!";
     message.style.backgroundColor = "green";
+
+    return true;
 }
 
-function validPhone(event, message){
+function validPhone(event, message, type){
     
-    const value = event.target.value;
+    let value;
+    if(type == 'button'){
+        value = event.value;
+    } else {
+        value = event.target.value;
+    }
     message.style.backgroundColor = "brown";
     if(value.length <= 0){
         message.innerHTML = "Заполните поле!";
-        return;
+        return false;
     } else if(value[0] != '+' || value[1] == undefined || value[1] != '7') {
-        message.innerHTML = "Формат: +79005001122  " + value[1];
-        return;
+        message.innerHTML = "Формат: +79005001122";
+        return false;
     } else if(!/^[+0-9]+$/.test(value)) {
         message.innerHTML = "Недопустимые символы!";
-        return;
+        return false;
     } else if (value.length < 12){
         message.innerHTML = "Короткий номер телефона!";
-        return;
+        return false;
     } else if (value.length > 12){
         message.innerHTML = "Длинный номер телефона!";
-        return;
+        return false;
     }
     message.innerHTML = "Поле заполнено!";
     message.style.backgroundColor = "green";
+
+    return true;
 }
 
-function validMail(event, message){
-    const value = event.target.value;
+function validMail(event, message, type){
+    let value;
+    if(type == 'button'){
+        value = event.value;
+    } else {
+        value = event.target.value;
+    }
     message.style.backgroundColor = "brown";
     if(value.length <= 0){
         message.innerHTML = "Заполните поле!";
-        return;
+        return false;
     } else if (value.length < 3){
         message.innerHTML = "Слишком короткий Email!";
-        return;
+        return false;
     } else if (value.length > 25){
         message.innerHTML = "Слишком длинный Email!";
-        return;
+        return false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
         message.innerHTML = "Некорректный Email!";
-        return;
+        return false;
     }
     message.innerHTML = "Поле заполнено!";
     message.style.backgroundColor = "green";
+
+    return true;
 }
