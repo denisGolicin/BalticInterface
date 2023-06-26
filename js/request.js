@@ -2,8 +2,8 @@ function sendRequest(url, type = "GET", param = []){
     const xhr = new XMLHttpRequest();
     const formData = new FormData();
     xhr.open(type, `${url}`);
-    xhr.setRequestHeader('pragma', 'no-cache');
-	xhr.setRequestHeader('cache-control', 'no-cache');
+    // xhr.setRequestHeader('pragma', 'no-cache');
+	// xhr.setRequestHeader('cache-control', 'no-cache');
 
     if(type == "POST"){
         for(let i = 0; i < param.length; i++){
@@ -39,4 +39,4 @@ const obj = [
     }
 ];
 
-sendRequest("https://litec-soft.ru/", "GET");
+sendRequest("https://litec-soft.ru/", "GET", [{"sfdsf":"dsdad"}]);
