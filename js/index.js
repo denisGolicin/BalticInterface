@@ -19,6 +19,20 @@ authEnter.addEventListener('click', function(){
     // запрос на авторизацию, пока открываю интерфейс
     authPage.style.display = 'none';
     mainPage.style.display = 'block';
+
+    // начать запрос с данных профиля
+
+    const xhr = new XMLHttpRequest();
+    sendRequest(xhr, "https://fc-baltika.ru/mp_api/news.php", "GET");
+    showLoader("Узнаю новости", false, false);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            createNews(JSON.parse(xhr.responseText));
+        } else {
+            showLoader("Ошибка на сервере", true, true, "brown");
+        }
+        
+    };
 });
 
 const _regEnter = document.querySelector('#_regEnter');

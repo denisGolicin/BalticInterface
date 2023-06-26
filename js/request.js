@@ -1,5 +1,4 @@
-function sendRequest(url, type = "GET", param = []){
-    const xhr = new XMLHttpRequest();
+function sendRequest(xhr, url, type = "GET", param = []){
     const formData = new FormData();
     xhr.open(type, `${url}`);
     // xhr.setRequestHeader('pragma', 'no-cache');
@@ -15,28 +14,27 @@ function sendRequest(url, type = "GET", param = []){
     } else {
         xhr.send();
     }
-
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-
-        } else {
-            
-        }
-        hideLoader();
-        
-    };
 }
 
-const obj = [
-    {
-        "test":"sadad",
-    },
-    {
-        "asdasd":"sadasd",
-    },
-    {
-        "asdasd":"asdasd",
-    }
-];
+// const obj = [
+//     {
+//         "test":"sadad",
+//     },
+//     {
+//         "asdasd":"sadasd",
+//     },
+//     {
+//         "asdasd":"asdasd",
+//     }
+// ];
 
-sendRequest("https://litec-soft.ru/", "GET", [{"sfdsf":"dsdad"}]);
+// const xhr = new XMLHttpRequest();
+// sendRequest(xhr, "https://litec-soft.ru/", "GET");
+// xhr.onload = function() {
+//     if (xhr.status === 200) {
+//         alert(xhr.responseText);
+//     } else {
+//         alert("Ошибка");
+//     }
+    
+// };
