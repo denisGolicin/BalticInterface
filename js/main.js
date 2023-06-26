@@ -18,6 +18,9 @@ activeWindowPage.style.display = 'block';
 
 for(let i = 0; i < navItem.length; i++){
     navItem[i].addEventListener('click', function(){
+
+        if(activeNavItem == navItem[i]) return;
+
         navItem[i].style.opacity = 1;
         activeNavItem.style.opacity = '.4';
         activeNavItem = navItem[i];
