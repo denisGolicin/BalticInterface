@@ -64,16 +64,16 @@
 }
 @keyframes zoom-x {
     0% {
-      transform: scale(1) rotate(13deg);
+      transform: scale(1) rotate(0deg);
     }
     50% {
-      transform: scale(1.2);
+      transform: scale(1.1) rotate(7deg);
     }
     100% {
       transform: scale(1) rotate(0deg);
     }
 }
-@keyframes zoom-y {
+/* @keyframes zoom-y {
     0% {
       transform: scale(1);
     }
@@ -83,7 +83,7 @@
     100% {
       transform: scale(1);
     }
-}
+} */
 .news-read{
     position: absolute;
     top: 100%;

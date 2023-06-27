@@ -17,10 +17,30 @@ activeNavItem.style.opacity = '1';
 let activeWindowPage = windowPage[WINDOW_NEWS];
 activeWindowPage.style.display = 'block';
 
+const headerButtonImg = document.querySelector('#headerButton');
+const headerButton = document.querySelector('.header-button-main');
+headerButton.addEventListener('click', function(){
+    const headerReload = document.querySelector('.reload-button');
+    console.log('ok')
+    if(headerReload){
+        window.location.reload();
+    }
+});
 for(let i = 0; i < navItem.length; i++){
     navItem[i].addEventListener('click', function(){
 
         if(activeNavItem == navItem[i]) return;
+        if(i == 0){
+            if(headerButton.classList.contains("reload-button")){
+                headerButton.classList.remove('reload-button');
+            }
+            headerButtonImg.src = 'src/svg/edit_83ygegrqz3rl.svg';
+        } else {
+            if(!headerButton.classList.contains("reload-button")){
+                headerButton.classList.add('reload-button');
+            }
+            headerButtonImg.src = 'src/svg/reload_b0mkt0syhw79.svg';
+        }
 
         navItem[i].style.opacity = 1;
         activeNavItem.style.opacity = '.4';
