@@ -21,15 +21,46 @@ authEnter.addEventListener('click', function(){
     mainPage.style.display = 'block';
 
     // начать запрос с данных профиля
-
     const xhr = new XMLHttpRequest();
-    sendRequest(xhr, "https://fc-baltika.ru/mp_api/news.php", "GET");
-    showLoader("Узнаю новости", false, false);
+    const formData = new FormData();
+    formData.append("API_KEY", ""); // точка входа
+    formData.append("TYPE", "LOGIN");
+    formData.append("LOGIN", authLogin.value);
+    formData.append("PASS", authPass.value);
+    sendRequest(xhr, "https://litec-soft.ru/baltic/index.php", "POST", formData);
+    showLoader("Авторизация...", false, false);
     xhr.onload = function() {
         if (xhr.status === 200) {
-            createNews(JSON.parse(xhr.responseText));
+            // createNews(JSON.parse(xhr.responseText));
+            const json = JSON.parse(xhr.responseText);
+            if (json.hasOwnProperty("error")) {
+                showLoader("Сервер временно недоступен.", false, false, "brown");
+                setTimeout(() => {
+                    showLoader("Вход в режиме гостя...", false, false,);
+                }, 1000);
+                setTimeout(() => {
+                    const xhr = new XMLHttpRequest();
+                    sendRequest(xhr, "https://fc-baltika.ru/mp_api/news.php", "GET");
+                    showLoader("Узнаю новости", false, false);
+                    xhr.onload = function() {
+                        if (xhr.status === 200) {
+                            createNews(JSON.parse(xhr.responseText));
+                        } else {
+                            showLoader("Ошибка на сервере", true, true, "brown");
+                        }
+                        
+                    };
+                }, 1300);
+                return;
+            } else if (json.hasOwnProperty("token")){
+                alert("Всё ок");
+                return;
+            }
+            showLoader("Ошибка на сервере! 101", true, true, "brown");
+            return;
+            
         } else {
-            showLoader("Ошибка на сервере", true, true, "brown");
+            showLoader("Ошибка на сервере! 400", true, true, "brown");
         }
         
     };

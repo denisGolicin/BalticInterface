@@ -1,15 +1,9 @@
-function sendRequest(xhr, url, type = "GET", param = []){
-    const formData = new FormData();
+function sendRequest(xhr, url, type = "GET", formData){
     xhr.open(type, `${url}`);
     // xhr.setRequestHeader('pragma', 'no-cache');
 	// xhr.setRequestHeader('cache-control', 'no-cache');
 
     if(type == "POST"){
-        for(let i = 0; i < param.length; i++){
-            formData.append(param[i].key, param[i].value);
-            //formData.append(param[i].key, JSON.stringify(text));
-            
-        }
         xhr.send(formData);
     } else {
         xhr.send();
