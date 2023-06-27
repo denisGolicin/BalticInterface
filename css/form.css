@@ -6,7 +6,7 @@
     display: flex;
     flex-wrap: nowrap;
 }
-.header-logo{
+.header-logo, .header-button{
     width: 20%;
     height: 100%;
     display: flex;
