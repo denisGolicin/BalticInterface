@@ -9,6 +9,7 @@ const WINDOW_NEWS = 1;
 const navItem = [] = document.querySelectorAll('.navItem');
 const windowPage = [] = document.querySelectorAll('.window');
 const headerText = document.querySelector('#main-header-text');
+const newsItem = [] = document.querySelectorAll('.news-item');
 
 let activeNavItem = navItem[WINDOW_NEWS];
 activeNavItem.style.opacity = '1';
@@ -47,13 +48,15 @@ function createNews(){
             const newsRead = [] = document.querySelectorAll('.news-read');
             const json = JSON.parse(xhr.responseText);
 
-            for(let i = 0; i < newsTitle.length; i++){
+            for(let i = 0; i < newsItem.length; i++){
+                newsItem[i].dataset.value = json[i].link;
                 newsTitle[i].innerHTML = json[i].title;
                 newsImg[i].src = json[i].image;
                 newsImg[i].addEventListener('load', function() {
                     imgLoader[i].style.display = 'none';
                     newsRead[i].style.transform = 'translate(0, -100%)';
                 });
+                
             }
 
             createTable();
@@ -61,6 +64,28 @@ function createNews(){
             showLoader("Ошибка на сервере", true, true, "brown");
         }
     };
+}
+for(let i= 0; i < newsItem.length; i++){
+    newsItem[i].addEventListener('click', function(){
+        const xhr = new XMLHttpRequest();
+        sendRequest(xhr, newsItem[i].dataset.value + "index.php", "GET");
+        showLoader("Загружаю информацию", false, false);
+        xhr.onerror = function() {
+            showLoader("Поизшла ошибка CORS.", true, true, "brown");
+        };
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const html = xhr.responseText;
+                // let parser = new DOMParser();
+                // let doc = parser.parseFromString(html, "text/html");
+
+                console.log(html);
+
+            } else {
+                showLoader("Ошибка на сервере", true, true, "brown");
+            }
+        };
+    });
 }
 
 function createTable(){

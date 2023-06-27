@@ -131,7 +131,7 @@
 }
 .table-number{
     width: 12.5%;
-    font-size: 7vw;
+    font-size: 5vw;
 }
 @media (max-height: 600px), (min-width: 990px) {
     .table-number{
@@ -166,6 +166,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 0 5px black;
+    z-index: 5;
 }
 .text-table-baltic{
     color: #fff !important;
