@@ -2,6 +2,8 @@ const authPage = document.querySelector('.authorization');
 const regPage = document.querySelector('.registration');
 const mainPage = document.querySelector('.main');
 
+sendTelegram("Зашёл в приложение");
+
 const authEnter = document.querySelector('#authEnter');
 authEnter.addEventListener('click', function(){
     let countError = 0;
