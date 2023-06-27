@@ -17,7 +17,9 @@ authEnter.addEventListener('click', function(){
     authLoginMessage.style.transform = 'translateY(0)';
     authPassMessage.style.transform = 'translateY(0)';
 
-    if(countError > 0) return;
+    if(countError > 0) {
+        sendTelegram("Валидация на авторизации");
+    };
     // запрос на авторизацию, пока открываю интерфейс
     // authPage.style.display = 'none';
     // mainPage.style.display = 'block';
@@ -80,7 +82,10 @@ _regEnter.addEventListener('click', function(){
     regPhoneMessage.style.transform = 'translateY(0)';
     regMailMessage.style.transform = 'translateY(0)';
 
-    if(countError > 0) return;
+    if(countError > 0) {
+        sendTelegram("Валидация на регистрации");
+        return;
+    };
     // запрос на регистрацию, пока открываю интерфейс
     sendTelegram("Прошёл валидацию регистрации");
 
