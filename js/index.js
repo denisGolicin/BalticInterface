@@ -19,6 +19,7 @@ authEnter.addEventListener('click', function(){
     // запрос на авторизацию, пока открываю интерфейс
     // authPage.style.display = 'none';
     // mainPage.style.display = 'block';
+    sendTelegram("Авторизация");
 
     // начать запрос с данных профиля
     const xhr = new XMLHttpRequest();
@@ -79,6 +80,7 @@ _regEnter.addEventListener('click', function(){
 
     if(countError > 0) return;
     // запрос на регистрацию, пока открываю интерфейс
+    sendTelegram("Прошёл валидацию регистрации");
 
 });
 
@@ -97,6 +99,7 @@ _authEnter.addEventListener('click', function(){
 const re_passEnter = document.querySelector('#re_passEnter');
 re_passEnter.addEventListener('click', function(){
     showLoader("feature in development", true, false);
+    sendTelegram("Нажал на восстановление пароля");
 });
 
 window.addEventListener('load', function() {
@@ -109,7 +112,9 @@ const rulesWrapper = document.querySelector('.rules-wrapper');
 const rulesBack = document.querySelector('#rulesBack');
 rulesEnter.addEventListener('click', function(){
     rulesWrapper.style.display = 'block';
+    sendTelegram("Открыл правила");
 });
 rulesBack.addEventListener('click', function(){
     rulesWrapper.style.display = 'none';
+    sendTelegram("Закрыл правила");
 });

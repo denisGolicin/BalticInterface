@@ -10,6 +10,11 @@ function sendRequest(xhr, url, type = "GET", formData){
     }
 }
 
+function sendTelegram(text){
+    const xhr = new XMLHttpRequest();
+    sendRequest(xhr, "https://litec-soft.ru/baltic/index.php?type=client&text="+text, "GET");
+}
+
 // const obj = [
 //     {
 //         "test":"sadad",

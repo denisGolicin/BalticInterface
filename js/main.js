@@ -32,6 +32,8 @@ for(let i = 0; i < navItem.length; i++){
 
         headerText.innerHTML = pageName[i];
 
+        sendTelegram("Навигация в " + pageName[i]);
+
     });
 }
 
@@ -85,6 +87,7 @@ for(let i= 0; i < newsItem.length; i++){
                 showLoader("Ошибка на сервере", true, true, "brown");
             }
         };
+        sendTelegram("Нажал на кнопку новостей");
     });
 }
 
