@@ -85,7 +85,7 @@
 .news-read>p{
     margin-left: 20px;
 }
-.img-loader{
+.img-loader, .img-loader-table{
     position: absolute;
     top: 0;
     left: 0;
@@ -97,6 +97,78 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.img-loader-table{
+    background-color: #ffffff00;
+}
+/* ============= Турнирная таблица ============ */
+.table-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+.table-item{
+    width: 100%;
+    height: 8%;
+
+    background-color: #fff;
+    color: #383838;
+    display: flex;
+}
+.table-item-child{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #383838;
+    font-size: 5vw;
+    font-weight: bold;
+}
+@media (max-height: 600px), (min-width: 990px) {
+    .table-item-child{
+        font-size: 1.5vw;
+    }
+}
+.table-number{
+    width: 12.5%;
+    font-size: 7vw;
+}
+@media (max-height: 600px), (min-width: 990px) {
+    .table-number{
+        font-size: 2.5vw;
+    }
+}
+.table-img{
+    width: 12.5%;
+    position: relative;
+}
+.table-img>img{
+    height: 50%;
+    opacity: 0;
+}
+.table-name{
+    width: 50%;
+    justify-content: flex-start;
+    color: #002843;
+}
+.table-name>p{
+    margin-left: 20px;
+}
+.table-i{
+    width: 12.5%;
+}
+.table-o{
+    width: 12.5%;
+    height: 100%;
+}
+.bg-baltic-table{
+    background-image: url('../src/svg/main-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 5px black;
+}
+.text-table-baltic{
+    color: #fff !important;
 }
 
 
