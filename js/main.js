@@ -76,10 +76,20 @@ function getUserInfo(){
                 
                 return;
             } else if (json.hasOwnProperty("login")){
+
+                const userName = document.querySelector('.profile-name');
                 const userLogin = document.querySelector('.profile-login');
                 const userMail = document.querySelector('.profile-mail');
                 const userPhone = document.querySelector('.profile-phone');
                 const userBrithday = document.querySelector('.profile-date_birthday');
+
+                if(json.name.length < 1){
+                    userName.innerHTML = "Аккаунт не верифицирован!";
+                    userName.style.color = "#da1414";
+                } else {
+                    userName.innerHTML = json.name + " " + json.name + " " + json.name;
+                    userName.style.color = "#fff";
+                }
 
                 userLogin.innerHTML = "Логин: " + json.login;
                 userMail.innerHTML = "Почта: " +  json.email;
@@ -266,6 +276,8 @@ function createMatchs(){
             }
 
             authPage.style.display = 'none';
+            regPage.style.display = 'none';
+            verPage.style.display = 'none';
             mainPage.style.display = 'block';
             hideLoader();
         } else {

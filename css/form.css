@@ -5,6 +5,12 @@
 
     display: flex;
     flex-wrap: nowrap;
+
+    position: relative;
+}
+.header-img-bg{
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
 }
 .header-logo, .header-button{
     width: 20%;
@@ -12,6 +18,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    z-index: 1;
 }
 .header-logo>img{
     height: 50%;

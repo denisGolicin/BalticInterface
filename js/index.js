@@ -1,6 +1,7 @@
 const authPage = document.querySelector('.authorization');
 const regPage = document.querySelector('.registration');
 const mainPage = document.querySelector('.main');
+const verPage = document.querySelector('.verification');
 sendTelegram("Зашёл в приложение");
 window.addEventListener('load', function() {
     checkInternet = false;
@@ -14,6 +15,8 @@ window.addEventListener('load', function() {
     } else {
         hideLoader();
     }
+
+    //hideLoader();
 });
 const authEnter = document.querySelector('#authEnter');
 authEnter.addEventListener('click', function(){
@@ -128,9 +131,15 @@ _regEnter.addEventListener('click', function(){
                 } else { localStorage.setItem('token', json.token); }
                 localStorage.setItem('token', json.token);
 
-                showLoader("Аккаунт успешно зарегистирован!");
+                showLoader("Аккаунт успешно зарегистирован!", false, false);
                 setTimeout(function(){
-                    getUserInfo();
+                    // getUserInfo();
+
+                    authPage.style.display = 'none';
+                    regPage.style.display = 'none';
+                    verPage.style.display = 'block';
+                    //mainPage.style.display = 'none';
+                    hideLoader();
                 }, 3000);
                 return;
             }
@@ -144,6 +153,10 @@ _regEnter.addEventListener('click', function(){
         
     };
 
+});
+const skipEnter = document.querySelector('.skip-verification-button');
+skipEnter.addEventListener('click', function(){
+    getUserInfo();
 });
 
 const regEnter = document.querySelector('#regEnter');

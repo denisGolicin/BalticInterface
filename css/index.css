@@ -21,6 +21,7 @@ html, body{
     height: 100%;  
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #002843;
 }
 .authorization{
     background-image: url('../src/svg/auth-bg.svg');
@@ -32,6 +33,11 @@ html, body{
 }
 
 .main{
+    display: none;
+    background-color: #002843;
+}
+
+.verification{
     display: none;
     background-color: #002843;
 }
