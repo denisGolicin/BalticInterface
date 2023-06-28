@@ -25,8 +25,11 @@ const headerButtonImg = document.querySelector('#headerButton');
 const headerButton = document.querySelector('.header-button-main');
 headerButton.addEventListener('click', function(){
     const headerReload = document.querySelector('.reload-button');
-    console.log('ok')
+    //console.log('ok')
     if(headerReload){
+        window.location.reload();
+    } else {
+        localStorage.setItem('token', null);
         window.location.reload();
     }
 });
