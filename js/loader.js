@@ -43,12 +43,12 @@ setTimeout(() => {
     }
 }, 7000);
 
-let queryString = window.location.search;
-let params = new URLSearchParams(queryString);
+// let queryString = window.location.search;
+// let params = new URLSearchParams(queryString);
 
-let key = params.get('key');
+// let key = params.get('key');
 
-if(key != 'iuCsPGD9NmVS1SBLvFzsD5g0'){
-    showLoader("Отказано в доступе!", false, true, "brown"); 
-    sendTelegram("Неверный ключ");
-}
+// if(key != 'iuCsPGD9NmVS1SBLvFzsD5g0'){
+//     showLoader("Отказано в доступе!", false, true, "brown"); 
+//     sendTelegram("Неверный ключ");
+// }
