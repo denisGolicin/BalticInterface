@@ -63,6 +63,9 @@ authEnter.addEventListener('click', function(){
             } else if (json.hasOwnProperty("token")){
                 //alert("Всё ок"); // function auth
                 getUserInfo();
+                if(localStorage.getItem('token') == null){
+                    
+                } else { localStorage.setItem('token', json.token); }
                 localStorage.setItem('token', json.token);
                 return;
             }
@@ -123,8 +126,15 @@ _regEnter.addEventListener('click', function(){
                 
                 return;
             } else if (json.hasOwnProperty("token")){
-                alert(json.token); // function auth
+                if(localStorage.getItem('token') == null){
+                    
+                } else { localStorage.setItem('token', json.token); }
                 localStorage.setItem('token', json.token);
+
+                showLoader("Аккаунт успешно зарегистирован!");
+                setTimeout(function(){
+                    getUserInfo();
+                }, 3000);
                 return;
             }
             showLoader("Ошибка на сервере! 101", true, true, "brown");
