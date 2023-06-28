@@ -3,6 +3,7 @@ const regPage = document.querySelector('.registration');
 const mainPage = document.querySelector('.main');
 
 sendTelegram("Зашёл в приложение");
+alert(getCookie('token'));
 
 const authEnter = document.querySelector('#authEnter');
 authEnter.addEventListener('click', function(){
@@ -90,14 +91,7 @@ _regEnter.addEventListener('click', function(){
     // sendTelegram("Прошёл валидацию регистрации");
 
     const xhr = new XMLHttpRequest();
-    sendRequest(xhr, `https://fc-baltika.ru/mp_api/reg_mp.php?
-
-    login=${encodeURIComponent(regLogin.value)}
-    &password=${encodeURIComponent(regPass.value)} 
-    &phone=${encodeURIComponent(regPhone.value)}
-    &email=${encodeURIComponent(regMail.value)}
-    
-    `,"GET");
+    sendRequest(xhr, `https://fc-baltika.ru/mp_api/reg_mp.php?login=${regLogin.value}&password=${regPass.value}&phone=${regPhone.value}&email=${regMail.value}`, "GET");
     showLoader("Регистрация аккаунта...", false, false);
 
     console.log(regLogin.value);
@@ -114,7 +108,10 @@ _regEnter.addEventListener('click', function(){
                 
                 return;
             } else if (json.hasOwnProperty("token")){
-                alert("Всё ок"); // function auth
+                alert(json.token); // function auth
+                const now = new Date();
+                const expirationDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+                document.cookie = `token=${json.token}; expires=${expirationDate.toUTCString()}; path=/`;
                 return;
             }
             showLoader("Ошибка на сервере! 101", true, true, "brown");
@@ -163,3 +160,35 @@ rulesBack.addEventListener('click', function(){
     rulesWrapper.style.display = 'none';
     sendTelegram("Закрыл правила");
 });
+
+function getCookie(name){
+    const cookies = document.cookie.split("; "); 
+    for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].split("="); 
+        if (cookie[0] === name) {
+            return cookie[1];
+        }
+    }
+
+    return 'null';
+}
+
+// document.cookie = `formSubmitted=1; expires=${expirationDate.toUTCString()}; path=/`;
+// document.cookie = `formDogName=${dogName.value}; expires=${expirationDate.toUTCString()}; path=/`;
+// document.cookie = `formUserName=${nameUser.value}; expires=${expirationDate.toUTCString()}; path=/`;
+// document.cookie = `formPhone=${phone.value}; expires=${expirationDate.toUTCString()}; path=/`;
+// document.cookie = `formInfo=${info.value}; expires=${expirationDate.toUTCString()}; path=/`;
+
+// if (document.cookie.indexOf('formSubmitted=1') !== -1) {
+//     nameUser.value = getCookie('formUserName');
+//     dogName.value = getCookie('formDogName');
+//     phone.value = getCookie('formPhone');
+//     info.value = getCookie('formInfo');
+
+//     infoTest.innerHTML = "Ваши данные на конкурс";
+//     photoButton.style.display = 'none';
+
+//     const savedImage = localStorage.getItem('savedImage');
+//     if (savedImage) {
+//         imgCookie.src = savedImage;
+//     }
