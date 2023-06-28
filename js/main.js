@@ -159,6 +159,71 @@ function createTable(){
                 });
             }
 
+            createMatchs();
+        } else {
+            showLoader("Ошибка на сервере", true, true, "brown");
+        }
+    };
+}
+
+function createMatchs(){
+
+    const xhr = new XMLHttpRequest();
+    sendRequest(xhr, "https://fc-baltika.ru/mp_api/actual_match.php", "GET");
+    showLoader("Проверяю матчи", false, false);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            const actualMatchsWrapper = document.querySelector('.actual-matchs-wrapper');
+            const json = JSON.parse(xhr.responseText);
+
+            for(let i = 0; i < json.length; i++){
+                actualMatchsWrapper.insertAdjacentHTML('beforeend', 
+                    `
+                    <div class="actual-matchs-item">
+                        <div class="actual-matchs-item-box">
+                            <div class="actual-matchs-date">
+                                <p class="actual-matchs-date-text">${json[i].date}</p>
+                            </div>
+                            <div class="actual-matchs-info">
+                                <div class="actual-matchs-team-name">
+                                    <p>${json[i].teams[0].name}</p>
+                                </div>
+                                <div class="actual-matchs-team-logo">
+                                    <div class="img-loader-actual-matchs">
+                                        <div class="curcle" style = "width: 30px; height: 30px;"></div>
+                                    </div>
+                                    <img class="actual-matchs-img-load" src="${"https://fc-baltika.ru" + json[i].teams[0].image}" alt="">
+                                </div>
+
+                                <div class="actual-matchs-team-count">
+                                    <p>${json[i].teams[0].count}:${json[i].teams[1].count}</p>
+                                </div>
+
+                                <div class="actual-matchs-team-logo">
+                                    <div class="img-loader-actual-matchs">
+                                        <div class="curcle" style = "width: 30px; height: 30px;"></div>
+                                    </div>
+                                    <img class="actual-matchs-img-load" src="${"https://fc-baltika.ru" + json[i].teams[1].image}" alt="">
+                                </div>
+                                <div class="actual-matchs-team-name">
+                                    <p>${json[i].teams[1].name}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                );
+            }
+
+            const actualMatchsImg = [] = document.querySelectorAll('.actual-matchs-img-load');
+            const imgLoaderactualMatchs = [] = document.querySelectorAll('.img-loader-actual-matchs')
+            for(let i = 0; i < actualMatchsImg.length; i++){
+                actualMatchsImg[i].addEventListener('load', function() {
+                    imgLoaderactualMatchs[i].style.display = 'none';
+                    actualMatchsImg[i].style.opacity = '1';
+                });
+            }
+
             authPage.style.display = 'none';
             mainPage.style.display = 'block';
             hideLoader();

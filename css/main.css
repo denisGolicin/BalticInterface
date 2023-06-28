@@ -108,7 +108,7 @@
 .news-read>p{
     margin-left: 20px;
 }
-.img-loader, .img-loader-table{
+.img-loader, .img-loader-table, .img-loader-actual-matchs{
     position: absolute;
     top: 0;
     left: 0;
@@ -123,6 +123,9 @@
     z-index: 5;
 }
 .img-loader-table{
+    background-color: #ffffff00;
+}
+.img-loader-actual-matchs{
     background-color: #ffffff00;
 }
 /* ============= Турнирная таблица ============ */
@@ -196,6 +199,108 @@
     color: #fff !important;
 }
 
+/* =============== matchs================== */
+
+.actual-matchs-wrapper{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.actual-matchs-item{
+    width: 100%;
+    height: 12%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.actual-matchs-item:first-child{
+    border-top: 0px solid #002843;
+}
+.actual-matchs-item-box{
+    width: 100%;
+    height: 100%;
+    border-top: 7px solid #002843;
+
+    background-image: url('../src/waves_full.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: #383838;
+    font-weight: bold;
+
+    background-color: #fff;
+}
+.actual-matchs-date{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+}
+.actual-matchs-date-text{
+    margin-left: 10px;
+    font-size: 2.5vw;
+}
+@media (max-height: 600px), (min-width: 990px) {
+    .actual-matchs-date-text{
+        font-size: 1.25vw;
+    }
+}
+
+.actual-matchs-info{
+    width: 100%;
+    height: 70%;
+    display: flex;
+}
+
+.actual-matchs-team-name{
+    width: 25%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.actual-matchs-team-name>p{
+    text-align: center;
+    font-size: 4vw;
+}
+@media (max-height: 600px), (min-width: 990px) {
+    .actual-matchs-team-name>p{
+        font-size: 2vw;
+    }
+}
+.actual-matchs-team-logo{
+    width: 15%;
+    height: 100%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.actual-matchs-team-logo>img{
+    opacity: 0;
+    height: 60%;
+}
+
+.actual-matchs-team-count{
+    width: 20%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.actual-matchs-team-count>p{
+    font-size: 6vw;
+}
+@media (max-height: 600px), (min-width: 990px) {
+    .actual-matchs-team-count>p{
+        font-size: 3vw;
+    }
+}
 
 
 
