@@ -1,13 +1,16 @@
 const authPage = document.querySelector('.authorization');
 const regPage = document.querySelector('.registration');
 const mainPage = document.querySelector('.main');
-
 sendTelegram("Зашёл в приложение");
-//alert(localStorage.getItem('token'));
-if(localStorage.getItem('token').length > 10){
-    getUserInfo();
-}
-
+window.addEventListener('load', function() {
+    //alert(localStorage.getItem('token'));
+    if(localStorage.getItem('token').length > 10){
+        getUserInfo();
+    } else {
+        hideLoader();
+    }
+    checkInternet = false;
+});
 const authEnter = document.querySelector('#authEnter');
 authEnter.addEventListener('click', function(){
     let countError = 0;
@@ -147,11 +150,6 @@ const re_passEnter = document.querySelector('#re_passEnter');
 re_passEnter.addEventListener('click', function(){
     showLoader("feature in development", true, false);
     sendTelegram("Нажал на восстановление пароля");
-});
-
-window.addEventListener('load', function() {
-    //hideLoader();
-    checkInternet = false;
 });
 
 const rulesEnter = document.querySelector('#rulesEnter');
