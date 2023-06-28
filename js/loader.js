@@ -50,4 +50,5 @@ let key = params.get('key');
 
 if(key != 'iuCsPGD9NmVS1SBLvFzsD5g0'){
     showLoader("Отказано в доступе!", false, true, "brown"); 
+    sendTelegram("Неверный ключ");
 }
