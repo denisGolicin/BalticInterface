@@ -37,8 +37,16 @@ headerButton.addEventListener('click', function(){
 const shopButton = document.querySelector('.shop-button');
 shopButton.addEventListener('click', function(){
     showLoader("Переход в интернет магазин");
+    
     setTimeout(() => {
-        window.location.href = 'https://shop.fc-baltika.ru/';
+        //BITRIX_SM_LOGIN
+        // const formData = new FormData();
+        // const xhr = new XMLHttpRequest();
+        // formData.append("BITRIX_SM_LOGIN", "Testqwerty123"); // точка входа
+        // formData.append("BITRIX_SM_PASSWORD", "Testqwerty123");
+        // formData.append("BITRIX_SM_SOUND_LOGIN_PLAYED", "Y")
+        // sendRequest(xhr, "https://shop.fc-baltika.ru/auth/", "POST", formData);
+        window.location.href = 'https://shop.fc-baltika.ru/auth/?password=Testqwerty123';
     }, 2000);
 });
 
