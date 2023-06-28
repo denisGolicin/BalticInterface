@@ -62,11 +62,11 @@ authEnter.addEventListener('click', function(){
                 return;
             } else if (json.hasOwnProperty("token")){
                 //alert("Всё ок"); // function auth
-                getUserInfo();
                 if(localStorage.getItem('token') == null){
                     
                 } else { localStorage.setItem('token', json.token); }
                 localStorage.setItem('token', json.token);
+                getUserInfo();
                 return;
             }
             showLoader("Ошибка на сервере! 101", true, true, "brown");
