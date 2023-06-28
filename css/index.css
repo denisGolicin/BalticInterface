@@ -24,7 +24,7 @@ html, body{
 }
 .authorization{
     background-image: url('../src/svg/auth-bg.svg');
-    display: block;
+    display: none;
 }
 .registration{
     background-image: url('../src/svg/auth-bg.svg');
@@ -32,6 +32,6 @@ html, body{
 }
 
 .main{
-    display: none;
+    display: block;
     background-color: #002843;
 }

@@ -6,11 +6,11 @@ let getLoaderState = false;
 let getLoaderError = false;
 let checkInternet = false;
 
-function showLoader(text, state, error, color = '#1338a9'){
+function showLoader(text, state, error, color = '#fff'){
 
     if(getLoaderError) return;
-
-    loaderText.style.backgroundColor = color;
+    if(color == "brown") color = "#da1414";
+    loaderText.style.color = color;
     loaderCurcle.style.display = 'none';
     loaderButton.style.display = 'none';
 

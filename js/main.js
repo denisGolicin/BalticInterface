@@ -1,3 +1,4 @@
+//showLoader("Теси", true, true, "brown");
 const pageName = [
     "Профиль",
     "Новости",
@@ -5,17 +6,20 @@ const pageName = [
     "Прошедшие матчи"
 ]
 
+const WINDOW_PROFILE = 0;
 const WINDOW_NEWS = 1;
+
 const navItem = [] = document.querySelectorAll('.navItem');
 const windowPage = [] = document.querySelectorAll('.window');
 const headerText = document.querySelector('#main-header-text');
 const newsItem = [] = document.querySelectorAll('.news-item');
 
-let activeNavItem = navItem[WINDOW_NEWS];
+let activeNavItem = navItem[WINDOW_PROFILE];
 activeNavItem.style.opacity = '1';
 
-let activeWindowPage = windowPage[WINDOW_NEWS];
+let activeWindowPage = windowPage[WINDOW_PROFILE];
 activeWindowPage.style.display = 'block';
+headerText.innerHTML = pageName[WINDOW_PROFILE];
 
 const headerButtonImg = document.querySelector('#headerButton');
 const headerButton = document.querySelector('.header-button-main');
