@@ -65,7 +65,6 @@ authEnter.addEventListener('click', function(){
                 if(localStorage.getItem('token') == null){
                     
                 } else { localStorage.setItem('token', json.token); }
-                localStorage.setItem('token', json.token);
                 getUserInfo();
                 return;
             }
