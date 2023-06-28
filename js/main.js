@@ -33,6 +33,15 @@ headerButton.addEventListener('click', function(){
         window.location.reload();
     }
 });
+
+const shopButton = document.querySelector('.shop-button');
+shopButton.addEventListener('click', function(){
+    showLoader("Переход в интернет магазин");
+    setTimeout(() => {
+        window.location.href = 'https://shop.fc-baltika.ru/';
+    }, 2000);
+});
+
 for(let i = 0; i < navItem.length; i++){
     navItem[i].addEventListener('click', function(){
 
@@ -47,6 +56,15 @@ for(let i = 0; i < navItem.length; i++){
                 headerButton.classList.add('reload-button');
             }
             headerButtonImg.src = 'src/svg/reload_b0mkt0syhw79.svg';
+        }
+
+        if(i == 4){
+            showLoader("Переход на покупку билета");
+            setTimeout(() => {
+                window.location.href = 'https://tickets.fc-baltika.ru/';
+            }, 2000);
+
+            return;
         }
 
         navItem[i].style.opacity = 1;
