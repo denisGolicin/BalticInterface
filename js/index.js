@@ -87,7 +87,45 @@ _regEnter.addEventListener('click', function(){
         return;
     };
     // запрос на регистрацию, пока открываю интерфейс
-    sendTelegram("Прошёл валидацию регистрации");
+    // sendTelegram("Прошёл валидацию регистрации");
+
+    const xhr = new XMLHttpRequest();
+    sendRequest(xhr, `https://fc-baltika.ru/mp_api/reg_mp.php?
+
+    login=${encodeURIComponent(regLogin.value)}
+    &password=${encodeURIComponent(regPass.value)} 
+    &phone=${encodeURIComponent(regPhone.value)}
+    &email=${encodeURIComponent(regMail.value)}
+    
+    `,"GET");
+    showLoader("Регистрация аккаунта...", false, false);
+
+    console.log(regLogin.value);
+    console.log(regPass.value);
+    console.log(regPhone.value);
+    console.log(regMail.value);
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            // createNews(JSON.parse(xhr.responseText));
+            const json = JSON.parse(xhr.responseText);
+            if (json.hasOwnProperty("error")) {
+                showLoader(json.error, false, true, "brown");
+                
+                return;
+            } else if (json.hasOwnProperty("token")){
+                alert("Всё ок"); // function auth
+                return;
+            }
+            showLoader("Ошибка на сервере! 101", true, true, "brown");
+            console.log(xhr.responseText);
+            return;
+            
+        } else {
+            showLoader("Ошибка на сервере! 400", true, true, "brown");
+        }
+        
+    };
 
 });
 
