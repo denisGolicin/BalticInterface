@@ -1,3 +1,4 @@
+
 const loader = document.querySelector('.loader-wrapper');
 const loaderText = document.querySelector('#loaderText');
 const loaderButton = document.querySelector('#loaderButton');
@@ -5,6 +6,7 @@ const loaderCurcle = document.querySelector('#loaderCurcle');
 let getLoaderState = false;
 let getLoaderError = false;
 let checkInternet = false;
+const loaderBlock = document.querySelector('.loader-curcle');
 
 function showLoader(text, state, error, color = '#fff'){
 
@@ -17,7 +19,15 @@ function showLoader(text, state, error, color = '#fff'){
     if(!getLoaderState){
         loader.style.display = 'block';
     }
-    if(!state) loaderCurcle.style.display = 'block'; else loaderButton.style.display = 'block';
+    if(!state) {
+        loaderCurcle.style.display = 'block';
+        loaderBlock.style.transform = "translateY(-50%)";
+
+    } else {
+        loaderButton.style.display = 'block';
+        loaderBlock.style.transform = "translateY(0)";
+    }
+        
 
     loaderText.innerHTML = text;
     getLoaderState = true;
@@ -42,7 +52,6 @@ setTimeout(() => {
         showLoader("Медленное интернет соединение", false /* кнопка */, false /* ошибка */, "brown");
     }
 }, 7000);
-
 // let queryString = window.location.search;
 // let params = new URLSearchParams(queryString);
 
