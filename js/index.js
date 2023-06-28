@@ -3,7 +3,10 @@ const regPage = document.querySelector('.registration');
 const mainPage = document.querySelector('.main');
 
 sendTelegram("Зашёл в приложение");
-alert(localStorage.getItem('token'));
+//alert(localStorage.getItem('token'));
+if(localStorage.getItem('token').length > 10){
+    getUserInfo();
+}
 
 const authEnter = document.querySelector('#authEnter');
 authEnter.addEventListener('click', function(){
@@ -28,28 +31,31 @@ authEnter.addEventListener('click', function(){
 
     // начать запрос с данных профиля
     const xhr = new XMLHttpRequest();
-    const formData = new FormData();
-    formData.append("API_KEY", ""); // точка входа
-    formData.append("TYPE", "LOGIN");
-    formData.append("LOGIN", authLogin.value);
-    formData.append("PASS", authPass.value);
-    sendRequest(xhr, "https://litec-soft.ru/baltic/index.php", "POST", formData);
+    // const formData = new FormData();
+    // formData.append("API_KEY", ""); // точка входа
+    // formData.append("TYPE", "LOGIN");
+    // formData.append("LOGIN", authLogin.value);
+    // formData.append("PASS", authPass.value);
+    //sendRequest(xhr, "https://litec-soft.ru/baltic/index.php", "POST", formData);
+    sendRequest(xhr, `https://fc-baltika.ru/mp_api/auth_mp.php?login=${authLogin.value}&password=${authPass.value}`, "GET");
     showLoader("Авторизация...", false, false);
     xhr.onload = function() {
         if (xhr.status === 200) {
             // createNews(JSON.parse(xhr.responseText));
             const json = JSON.parse(xhr.responseText);
             if (json.hasOwnProperty("error")) {
-                showLoader("Сервер временно недоступен.", false, false, "brown");
-                setTimeout(() => {
-                    showLoader("Вход в режиме гостя...", false, false,);
-                }, 1000);
-                setTimeout(() => {
-                    createNews(JSON.parse(xhr.responseText));
-                }, 1300);
+                showLoader(json.error, true, false, "brown");
+                // setTimeout(() => {
+                //     showLoader("Вход в режиме гостя...", false, false);
+                // }, 1000);
+                // setTimeout(() => {
+                //     createNews(JSON.parse(xhr.responseText));
+                // }, 1300);
                 return;
             } else if (json.hasOwnProperty("token")){
-                alert("Всё ок"); // function auth
+                //alert("Всё ок"); // function auth
+                getUserInfo();
+                localStorage.setItem('token', json.token);
                 return;
             }
             showLoader("Ошибка на сервере! 101", true, true, "brown");
@@ -60,6 +66,7 @@ authEnter.addEventListener('click', function(){
         }
         
     };
+    
 });
 
 const _regEnter = document.querySelector('#_regEnter');
@@ -143,7 +150,7 @@ re_passEnter.addEventListener('click', function(){
 });
 
 window.addEventListener('load', function() {
-    hideLoader();
+    //hideLoader();
     checkInternet = false;
 });
 

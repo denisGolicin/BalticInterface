@@ -14,12 +14,12 @@ const windowPage = [] = document.querySelectorAll('.window');
 const headerText = document.querySelector('#main-header-text');
 const newsItem = [] = document.querySelectorAll('.news-item');
 
-let activeNavItem = navItem[WINDOW_PROFILE];
+let activeNavItem = navItem[WINDOW_NEWS];
 activeNavItem.style.opacity = '1';
 
-let activeWindowPage = windowPage[WINDOW_PROFILE];
+let activeWindowPage = windowPage[WINDOW_NEWS];
 activeWindowPage.style.display = 'block';
-headerText.innerHTML = pageName[WINDOW_PROFILE];
+headerText.innerHTML = pageName[WINDOW_NEWS];
 
 const headerButtonImg = document.querySelector('#headerButton');
 const headerButton = document.querySelector('.header-button-main');
@@ -59,6 +59,40 @@ for(let i = 0; i < navItem.length; i++){
         sendTelegram("Навигация в " + pageName[i]);
 
     });
+}
+function getUserInfo(){
+    const xhr = new XMLHttpRequest();
+    sendRequest(xhr, `https://fc-baltika.ru/mp_api/get_user_date_mp.php?token=${localStorage.getItem('token')}`, "GET");
+    showLoader("Вход в профиль", false, false);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            
+            const json = JSON.parse(xhr.responseText);
+            if (json.hasOwnProperty("error")) {
+                showLoader(json.error, true, true, "brown");
+                
+                return;
+            } else if (json.hasOwnProperty("login")){
+                const userLogin = document.querySelector('.profile-login');
+                const userMail = document.querySelector('.profile-mail');
+                const userPhone = document.querySelector('.profile-phone');
+                const userBrithday = document.querySelector('.profile-date_birthday');
+
+                userLogin.innerHTML = "Логин: " + json.login;
+                userMail.innerHTML = "Почта: " +  json.email;
+                userPhone.innerHTML = "Телефон: " +  json.phone;
+                userBrithday.innerHTML = "День рождения: " +  json.date_birthday;
+
+                createNews();
+                return;
+            }
+            showLoader("Ошибка на сервере! 101", true, true, "brown");
+            console.log(xhr.responseText);
+
+        } else {
+            showLoader("Ошибка на сервере", true, true, "brown");
+        }
+    };
 }
 
 function createNews(){
