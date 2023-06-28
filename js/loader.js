@@ -51,7 +51,7 @@ setTimeout(() => {
     if(checkInternet){
         showLoader("Медленное интернет соединение", false /* кнопка */, false /* ошибка */, "brown");
     }
-}, 7000);
+}, 14000);
 // let queryString = window.location.search;
 // let params = new URLSearchParams(queryString);
 
