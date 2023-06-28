@@ -32,13 +32,11 @@ authEnter.addEventListener('click', function(){
     authPassMessage.style.transform = 'translateY(0)';
 
     if(countError > 0) {
-        sendTelegram("Валидация на авторизации");
         return;
     };
     // запрос на авторизацию, пока открываю интерфейс
     // authPage.style.display = 'none';
     // mainPage.style.display = 'block';
-    sendTelegram("Авторизация");
 
     // начать запрос с данных профиля
     const xhr = new XMLHttpRequest();
@@ -102,7 +100,6 @@ _regEnter.addEventListener('click', function(){
     regMailMessage.style.transform = 'translateY(0)';
 
     if(countError > 0) {
-        sendTelegram("Валидация на регистрации");
         return;
     };
     // запрос на регистрацию, пока открываю интерфейс
@@ -182,11 +179,11 @@ const rulesWrapper = document.querySelector('.rules-wrapper');
 const rulesBack = document.querySelector('#rulesBack');
 rulesEnter.addEventListener('click', function(){
     rulesWrapper.style.display = 'block';
-    sendTelegram("Открыл правила");
+    
 });
 rulesBack.addEventListener('click', function(){
     rulesWrapper.style.display = 'none';
-    sendTelegram("Закрыл правила");
+    
 });
 
 function getCookie(name){
