@@ -3,7 +3,7 @@ const regPage = document.querySelector('.registration');
 const mainPage = document.querySelector('.main');
 
 sendTelegram("Зашёл в приложение");
-alert(getCookie('token'));
+alert(localStorage.getItem('token'));
 
 const authEnter = document.querySelector('#authEnter');
 authEnter.addEventListener('click', function(){
@@ -109,9 +109,7 @@ _regEnter.addEventListener('click', function(){
                 return;
             } else if (json.hasOwnProperty("token")){
                 alert(json.token); // function auth
-                const now = new Date();
-                const expirationDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
-                document.cookie = `token=${json.token}; expires=${expirationDate.toUTCString()}; path=/`;
+                localStorage.setItem('token', json.token);
                 return;
             }
             showLoader("Ошибка на сервере! 101", true, true, "brown");
