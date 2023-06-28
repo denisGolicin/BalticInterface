@@ -110,7 +110,7 @@ _regEnter.addEventListener('click', function(){
             // createNews(JSON.parse(xhr.responseText));
             const json = JSON.parse(xhr.responseText);
             if (json.hasOwnProperty("error")) {
-                showLoader(json.error, false, true, "brown");
+                showLoader(json.error, true, true, "brown");
                 
                 return;
             } else if (json.hasOwnProperty("token")){
