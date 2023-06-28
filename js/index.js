@@ -4,6 +4,10 @@ const mainPage = document.querySelector('.main');
 sendTelegram("Зашёл в приложение");
 window.addEventListener('load', function() {
     //alert(localStorage.getItem('token'));
+    if(localStorage.getItem('token') == null){
+        hideLoader();
+        return;
+    }
     if(localStorage.getItem('token').length > 10){
         getUserInfo();
     } else {
