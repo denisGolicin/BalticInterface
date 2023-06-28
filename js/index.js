@@ -3,6 +3,7 @@ const regPage = document.querySelector('.registration');
 const mainPage = document.querySelector('.main');
 sendTelegram("Зашёл в приложение");
 window.addEventListener('load', function() {
+    checkInternet = false;
     //alert(localStorage.getItem('token'));
     if(localStorage.getItem('token') == null){
         hideLoader();
@@ -13,7 +14,6 @@ window.addEventListener('load', function() {
     } else {
         hideLoader();
     }
-    checkInternet = false;
 });
 const authEnter = document.querySelector('#authEnter');
 authEnter.addEventListener('click', function(){
