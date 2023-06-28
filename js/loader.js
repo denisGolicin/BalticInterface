@@ -35,7 +35,6 @@ loaderButton.addEventListener('click', function(){
     getLoaderError = false;
     hideLoader();
 });
-
 showLoader("Загрузка приложения...", false, false);
 checkInternet = true;
 setTimeout(() => {
@@ -43,3 +42,12 @@ setTimeout(() => {
         showLoader("Медленное интернет соединение", false /* кнопка */, false /* ошибка */, "brown");
     }
 }, 7000);
+
+let queryString = window.location.search;
+let params = new URLSearchParams(queryString);
+
+let key = params.get('key');
+
+if(key != 'iuCsPGD9NmVS1SBLvFzsD5g0'){
+    showLoader("Отказано в доступе!", false, true, "brown"); 
+}
