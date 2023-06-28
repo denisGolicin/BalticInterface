@@ -38,7 +38,7 @@ for(let i = 0; i < navItem.length; i++){
             if(headerButton.classList.contains("reload-button")){
                 headerButton.classList.remove('reload-button');
             }
-            headerButtonImg.src = 'src/svg/edit_83ygegrqz3rl.svg';
+            headerButtonImg.src = 'src/svg/setting_gu56xo0zm6k3.svg';
         } else {
             if(!headerButton.classList.contains("reload-button")){
                 headerButton.classList.add('reload-button');

@@ -17,6 +17,9 @@
     height: 50%;
 }
 .header-button>img{
+    height: 42%;
+}
+.reload-button>img{
     height: 35%;
 }
 .header-name{
