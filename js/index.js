@@ -26,6 +26,7 @@ authEnter.addEventListener('click', function(){
 
     if(countError > 0) {
         sendTelegram("Валидация на авторизации");
+        return;
     };
     // запрос на авторизацию, пока открываю интерфейс
     // authPage.style.display = 'none';
