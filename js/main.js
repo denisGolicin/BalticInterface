@@ -182,7 +182,7 @@ for(let i= 0; i < newsItem.length; i++){
 
             } else {
                 showLoader("Ошибка на сервере", true, true, "brown");
-            }
+            }  
         };
         //sendTelegram("Нажал на кнопку новостей");
     });
