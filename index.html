@@ -10,6 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css?v=1.2.1">
 
 		<link rel="stylesheet" type="text/css" href="css/loader.css?v=1.2.1">
+
+		<meta name="\&quot;viewport\&quot;" content="\&quot;user-scalable=no," initial-scale="1.0," maximum-scale="1.0," width="device-width\&quot;">
 		<title>ФК Балтика</title>
 	</head>
 	<body>
@@ -31,7 +33,7 @@
 				</div>
 
 				<div class="loader-img">
-					<img src="src/man.jpg" alt="man">
+					<img src="src/logo.png" alt="man">
 				</div>
 				<div class="loader-text">
 					
@@ -65,7 +67,7 @@
 				<div class="form">
 					<div class="form-input">
 						<div class="input">
-							<input type="text" name="" id="authLogin" placeholder="Логин">
+							<input type="text" name="" id="authLogin" placeholder="Логин или почта">
 						</div>
 						<div class="input-notification">
 							<p id = "authLoginMessage">Заполните поле!</p>
@@ -124,19 +126,10 @@
 				<div class="form form-reg">
 					<div class="form-input">
 						<div class="input">
-							<input type="text" name="" id="regLogin" placeholder="Логин">
+							<input type="text" name="" id="regMail" placeholder="Почта">
 						</div>
 						<div class="input-notification">
 							<p id="regLoginMessage">Заполните поле!</p>
-						</div>
-					</div>
-
-					<div class="form-input">
-						<div class="input">
-							<input type="text" name="" id="regPass" placeholder="Пароль">
-						</div>
-						<div class="input-notification">
-							<p id="regPassMessage">Заполните поле!</p>
 						</div>
 					</div>
 
@@ -151,10 +144,19 @@
 
 					<div class="form-input">
 						<div class="input">
-							<input type="text" name="" id="regMail" placeholder="Почта">
+							<input type="text" name="" id="regPass" placeholder="Пароль">
 						</div>
 						<div class="input-notification">
-							<p id="regMailMessage">Заполните поле!</p>
+							<p id="regPassMessage">Заполните поле!</p>
+						</div>
+					</div>
+
+					<div class="form-input">
+						<div class="input">
+							<input type="text" name="" id="regPassVerif" placeholder="Подтверждение пароля">
+						</div>
+						<div class="input-notification">
+							<p id="regPassVerifMessage">Заполните поле!</p>
 						</div>
 					</div>
 
@@ -394,92 +396,100 @@
 						</div>
 						<div class="profile-info">
 							<div class="profile-info-block">
-								<div class="profile-info-data">
+								<div class="profile-info-box profile-info-data">
 									<p class="profile-login">Логин:</p>
 									<p class="profile-mail">Почта: </p>
 									<p class="profile-date_birthday">День рождения:</p>
 									<p class="profile-phone">Номер телефона:</p>
 								</div>
 							</div>
-							<div class="profile-info-block">
-								<p></p>
-							</div>
-							<div class="profile-info-block">
-								<p></p>
-							</div>
+							
 						</div>
 					</div>
 				</div>
 
-				<div class="window">
-					<div class="news-wrapper">
-						<div class="news-item">
-							<div class="news-item-title">
-								<p class="news-title">Новости</p>
-							</div>
-							<div class="news-item-img">
-								<div class="img-loader">
-									<div class="curcle"></div>
-								</div>
-								<img class="news-img" src="" alt="">
+				<div class="window window-news" style="position: relative;">
 
-								<div class="news-read">
-									<p>Читать подробнее</p>
+					<div class="news-description-wrapper">
+						<div class="news-description-content">
+							
+						</div>
+					</div>
+
+					<div class="news-block">
+						<div class="news-wrapper">
+						
+
+							<div class="news-item">
+								<div class="news-item-title">
+									<p class="news-title">Новости</p>
+								</div>
+								<div class="news-item-img">
+									<div class="img-loader">
+										<div class="curcle"></div>
+									</div>
+									<img class="news-img" src="" alt="">
+	
+									<div class="news-read">
+										<p>Читать подробнее</p>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+						<div class="news-wrapper">
+							<div class="news-item">
+								<div class="news-item-title">
+									<p class="news-title">Новости</p>
+								</div>
+								<div class="news-item-img">
+									<div class="img-loader">
+										<div class="curcle"></div>
+									</div>
+									<img class="news-img" src="" alt="">
+	
+									<div class="news-read">
+										<p>Читать подробнее</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="news-wrapper">
+							<div class="news-item">
+								<div class="news-item-title">
+									<p class="news-title">Новости</p>
+								</div>
+								<div class="news-item-img">
+									<div class="img-loader">
+										<div class="curcle"></div>
+									</div>
+									<img class="news-img" src="" alt="">
+	
+									<div class="news-read">
+										<p>Читать подробнее</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="news-wrapper">
+							<div class="news-item">
+								<div class="news-item-title">
+									<p class="news-title">Новости</p>
+								</div>
+								<div class="news-item-img">
+									<div class="img-loader">
+										<div class="curcle"></div>
+									</div>
+									<img class="news-img" src="" alt="">
+	
+									<div class="news-read">
+										<p>Читать подробнее</p>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="news-wrapper">
-						<div class="news-item">
-							<div class="news-item-title">
-								<p class="news-title">Новости</p>
-							</div>
-							<div class="news-item-img">
-								<div class="img-loader">
-									<div class="curcle"></div>
-								</div>
-								<img class="news-img" src="" alt="">
 
-								<div class="news-read">
-									<p>Читать подробнее</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="news-wrapper">
-						<div class="news-item">
-							<div class="news-item-title">
-								<p class="news-title">Новости</p>
-							</div>
-							<div class="news-item-img">
-								<div class="img-loader">
-									<div class="curcle"></div>
-								</div>
-								<img class="news-img" src="" alt="">
-
-								<div class="news-read">
-									<p>Читать подробнее</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="news-wrapper">
-						<div class="news-item">
-							<div class="news-item-title">
-								<p class="news-title">Новости</p>
-							</div>
-							<div class="news-item-img">
-								<div class="img-loader">
-									<div class="curcle"></div>
-								</div>
-								<img class="news-img" src="" alt="">
-
-								<div class="news-read">
-									<p>Читать подробнее</p>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 				<div class="window window-table">
 					<div class="table-wrapper">
