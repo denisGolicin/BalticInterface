@@ -1,583 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<link rel="stylesheet" type="text/css" href="css/reset.css?v=1.2.1">
-		<link rel="stylesheet" type="text/css" href="css/index.css?v=1.2.1">
-		<link rel="stylesheet" type="text/css" href="css/form.css?v=1.2.1">
-		<link rel="stylesheet" type="text/css" href="css/main.css?v=1.2.1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФК Балтика</title>
 
-		<link rel="stylesheet" type="text/css" href="css/loader.css?v=1.2.1">
+    <style>
+        .loader-wrapper, html, body{
+            width: 100%;
+            height: 100%;
 
-		<meta name="\&quot;viewport\&quot;" content="\&quot;user-scalable=no," initial-scale="1.0," maximum-scale="1.0," width="device-width\&quot;">
-		<title>ФК Балтика</title>
-	</head>
-	<body>
+            display: block !important;
+        }
+        .header{
+            width: 100%;
+            height: 7%;
+            background-color: #0c4077;
 
-		<div class="wrapper">
+            /* background-image: url('../src/separator_head_2.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: 50% 130%; */
 
-			<div class="loader-wrapper">
+            display: flex;
+            flex-wrap: nowrap;
 
-				<div class="header">
-					<div class="header-logo">
-						<img src="src/logo.png" alt="logo">
-					</div>
-					<div class="header-name">
-						<p id="loaderText">Экран загрузки</p>
-					</div>
-					<div class="header-button">
+            position: relative;
 
-					</div>
-				</div>
+            box-shadow: 0 0 5px black;
 
-				<div class="loader-img">
-					<img src="src/logo.png" alt="man">
-				</div>
-				<div class="loader-text">
-					
-				</div>
-				<div class="loader-curcle">
-					<div class="curcle" id = "loaderCurcle"></div>
-					<div class="loader-button">
-						<button id = "loaderButton">Закрыть</button>
-					</div>
-				</div>
-			</div>
-			<!-- ================== -->
-			<script src="js/loader.js?v=1.2.1"></script>
+            
 
-			<div class="page authorization">
-				
-				<div class="header">
-					<div class="header-logo">
-						<img src="src/logo.png" alt="logo">
-					</div>
-					<div class="header-name">
-						<p>Добро пожаловать!</p>
-					</div>
-					<div class="header-button">
+            z-index: 99;
+        }
+        .header-img-bg{
+            justify-content: flex-start !important;
+            align-items: flex-start !important;
+        }
+        .header-logo, .header-button{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-					</div>
-				</div>
+            z-index: 1;
+        }
+        .header-logo>img{
+            height: 50%;
+        }
+        .header-button>img{
+            height: 37%;
+        }
+        .reload-button>img{
+            height: 35%;
+        }
+        .header-name{
+            width: 100%;
+            height: 100%;
 
-				<div class="title">Авторизация</div>
+            font-size: 4vw;
+            font-weight: bold;
 
-				<div class="form">
-					<div class="form-input">
-						<div class="input">
-							<input type="text" name="" id="authLogin" placeholder="Логин или почта">
-						</div>
-						<div class="input-notification">
-							<p id = "authLoginMessage">Заполните поле!</p>
-						</div>
-					</div>
+            display: flex;
+            align-items: center;
+            margin-left: 7px;
+        }
+    </style>
 
-					<div class="form-input">
-						<div class="input">
-							<input type="password" name="" id="authPass" placeholder="Пароль">
-						</div>
-						<div class="input-notification">
-							<p id = "authPassMessage">Заполните поле!</p>
-						</div>
-					</div>
+    <link rel="stylesheet" type="text/css" href="css/reset.css?v=1.2.1">
+    <link rel="stylesheet" type="text/css" href="css/loader.css?v=1.2.1">
+</head>
+<body>
 
-					<div class="form-button">
-						<div class="button">
-							<button id="authEnter">Войти</button>
-						</div>
-					</div>
+    <div class="loader-wrapper">
 
-				</div>
+        <div class="header">
+            <div class="header-logo">
+                <img src="src/logo.png" alt="logo">
+            </div>
+            <div class="header-name">
+                <p id="loaderText" style="color: #da1414;">Требуется обновление приложения!</p>
+            </div>
+            <div class="header-button">
 
-				<div class="terms">
-					<div class="terms-authorization" id="regEnter">
-						<p>Зарегистровать аккаунт</p>
-					</div>
-				</div>
+            </div>
+        </div>
 
-				<div class="footer">
-					<div class="footer-box" id="re_passEnter">
-						<p>Забыли пароль?</p>
-					</div>
-				</div>
-
-				
-
-			</div>
-
-			<div class="page registration">
-				
-				<div class="header">
-					<div class="header-logo">
-						<img src="src/logo.png" alt="logo">
-					</div>
-					<div class="header-name">
-						<p>Добро пожаловать!</p>
-					</div>
-					<div class="header-button">
-
-					</div>
-				</div>
-
-				<div class="title">Регистрация</div>
-
-				<div class="form form-reg">
-					<div class="form-input">
-						<div class="input">
-							<input type="text" name="" id="regMail" placeholder="Почта">
-						</div>
-						<div class="input-notification">
-							<p id="regLoginMessage">Заполните поле!</p>
-						</div>
-					</div>
-
-					<div class="form-input">
-						<div class="input">
-							<input type="text" name="" id="regPhone" placeholder="Телефон">
-						</div>
-						<div class="input-notification">
-							<p id="regPhoneMessage">Заполните поле!</p>
-						</div>
-					</div>
-
-					<div class="form-input">
-						<div class="input">
-							<input type="text" name="" id="regPass" placeholder="Пароль">
-						</div>
-						<div class="input-notification">
-							<p id="regPassMessage">Заполните поле!</p>
-						</div>
-					</div>
-
-					<div class="form-input">
-						<div class="input">
-							<input type="text" name="" id="regPassVerif" placeholder="Подтверждение пароля">
-						</div>
-						<div class="input-notification">
-							<p id="regPassVerifMessage">Заполните поле!</p>
-						</div>
-					</div>
-
-					
-
-					<div class="form-button">
-						<div class="button register-button">
-							<button id="_regEnter">Далее</button>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="terms terms-reg">
-					<div class="terms-authorization" id="_authEnter">
-						<p>Войти в аккаунт</p>
-					</div>
-				</div>
-
-				<div class="footer footer-reg">
-					<div class="footer-box footer-box-reg" id="rulesEnter">
-						<p>Я прочитал и согласен с политикой конфиденциальности. <span>Подробнее</span></p>
-					</div>
-				</div>
-
-			</div>
-			<!-- ///////////// -->
-			<div class="rules-wrapper">
-				<div class="rules-text">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem corrupti voluptatem fugiat harum et aspernatur eaque nihil ut nostrum, eum iusto, ab voluptatum recusandae tempore facilis deleniti repellendus id nisi.
-					Quos sequi fugit saepe veritatis, sint perspiciatis quo incidunt, cum in non natus expedita dolorem veniam deserunt magni sit? Vero sapiente distinctio, eveniet assumenda laudantium quisquam repellendus quasi aspernatur nemo.
-					Laboriosam quae accusamus, harum vero fuga, delectus dolores iusto odit ipsum recusandae ex ab natus nemo blanditiis quo repudiandae. Quas tempora dignissimos hic commodi ea molestias minus voluptates ipsam libero?
-					Necessitatibus esse voluptatibus non. Enim, ipsa quae? Obcaecati necessitatibus maiores ratione eligendi voluptas vel laborum reprehenderit id fuga quibusdam. Quam veniam enim necessitatibus minus perferendis, deserunt laudantium repellat et provident.
-					Nemo unde perspiciatis veritatis reiciendis id eaque necessitatibus minus quo eos architecto labore perferendis voluptas vitae, ea voluptatem aspernatur saepe soluta optio iusto quibusdam voluptates minima? Quaerat perferendis accusantium quam!
-					Consectetur, iusto mollitia beatae qui minima hic! In modi molestiae itaque quas eveniet repudiandae ipsa iste maxime. Praesentium impedit fugit placeat voluptatum corporis quidem dolorum animi magnam asperiores. Perferendis, in.
-					Placeat voluptas doloremque ipsam autem, cum laboriosam adipisci obcaecati, ipsum odit omnis, labore vel aspernatur molestiae facere. Eaque magni vitae vel perspiciatis magnam harum esse. Quisquam eaque expedita dolor exercitationem!
-					Voluptatem animi nesciunt aliquam non repellat soluta voluptatibus sed ullam ab veniam aliquid perspiciatis voluptate error debitis culpa placeat ad nobis, corporis assumenda repudiandae amet commodi vitae! Quod, iste dicta.
-					Explicabo maiores neque dolorum. A vitae aliquid, earum exercitationem quos possimus laudantium numquam neque veritatis molestias voluptatum sed assumenda consequatur ratione nesciunt, debitis facere impedit, repudiandae eos natus hic dignissimos.
-					Modi sint, quae voluptatem minus placeat animi reprehenderit suscipit culpa magnam nesciunt enim a vitae dolorum eius eum corrupti ullam sit laborum quo eligendi necessitatibus cupiditate ab debitis? Quaerat, voluptatibus.
-					Quod dolores atque ducimus, perspiciatis dignissimos eaque ipsum, fuga ullam vitae minima reiciendis voluptate quaerat delectus esse soluta natus beatae sunt accusantium aperiam corporis molestias! Necessitatibus natus odio dolorem accusamus!
-					Itaque sunt id vitae temporibus quos totam earum pariatur animi, placeat, ab libero eligendi, aliquid eos quisquam. Hic ullam odio soluta non veniam, atque sapiente ea, alias ab reprehenderit nostrum?
-					Soluta consectetur commodi libero possimus quam aperiam fugit quasi numquam sunt, mollitia praesentium nisi. Qui necessitatibus aperiam recusandae voluptate? Cum nisi cupiditate qui ipsum facere laudantium at repellendus rerum eum.
-					Provident earum omnis modi nesciunt tenetur laborum vel reiciendis minima at, amet assumenda aliquam voluptate, consequuntur quod. Officia, eos natus, asperiores eum nemo debitis obcaecati, quibusdam ut iusto suscipit laboriosam!
-					Nostrum quaerat consequatur quis illo culpa voluptatibus unde adipisci atque veniam odio et quos sed alias nihil, ipsam blanditiis voluptatum obcaecati consectetur aliquid molestiae cum. Deserunt suscipit molestiae optio harum.
-					Optio mollitia omnis neque. Et incidunt placeat aliquid porro delectus consectetur necessitatibus voluptate, ipsa dolor minus sapiente aut vitae. Nihil porro voluptatum ipsa sint nobis quae consequatur impedit quo maiores.
-					Quis eaque, ex incidunt aliquam quaerat, eius eum accusamus voluptatibus veritatis reiciendis in maxime aspernatur eos ea, repellendus amet tempore doloribus. Asperiores repellat aperiam possimus quos, exercitationem blanditiis magnam iusto.
-					Est culpa maxime voluptates quos eveniet quisquam iure officiis, unde earum commodi dolorum enim iusto quod dignissimos quia adipisci impedit deleniti, magnam non omnis corrupti. Modi corrupti assumenda autem quo!
-					Temporibus ullam ab doloremque pariatur quaerat nam quisquam, a rerum beatae earum? Quaerat, accusantium hic. Saepe commodi voluptatum excepturi voluptatibus labore molestias. Fugiat commodi nobis natus facere dolores magnam incidunt!
-					Tempore maiores repudiandae odio, officia, reiciendis hic molestiae dolores tempora accusamus laudantium perferendis quam laboriosam neque architecto esse sit exercitationem. Quasi obcaecati tempora ipsa expedita possimus repellat rerum, voluptate est.
-					Non tempore aperiam, blanditiis error ab magni sed saepe nisi est optio obcaecati vero fugiat animi asperiores, quisquam ullam nihil, doloremque deleniti. Asperiores dolor ipsam recusandae aut magnam impedit quos!
-					Pariatur nihil quos explicabo dolorum natus nemo quis, doloribus nobis facilis ad mollitia quibusdam tempora accusantium. Nesciunt, perferendis veritatis fugiat, reprehenderit hic nam numquam cum tempora quia aut, quibusdam id.
-					Mollitia aspernatur fuga nam deserunt pariatur eos ullam repellat sequi magni, natus ratione? Magnam accusantium suscipit, animi delectus, rem corrupti tempora itaque non possimus ea nihil quis. Molestias, iste doloremque.
-					Minima delectus, pariatur ea perferendis incidunt nobis, exercitationem magni inventore et, debitis alias! Reprehenderit ad est nihil rerum et facere nisi cumque iure, pariatur suscipit ut possimus odio explicabo qui!
-					Doloremque a vel, aliquid commodi deleniti molestias officia obcaecati. Autem, unde mollitia? Placeat earum, vero sapiente mollitia expedita repellat! Dicta nesciunt quasi corrupti nemo quisquam eligendi expedita asperiores laboriosam debitis.
-					Unde, exercitationem accusamus. Facere iusto culpa quia autem ipsam quod impedit perferendis odio aspernatur quos ad dignissimos iure deleniti sit molestias nemo atque, consequuntur vel quaerat eveniet, aliquid est sapiente.
-					Corporis ipsam, error qui exercitationem facere debitis, sed iste veniam nisi id quisquam ipsa soluta harum vel nemo ratione! At ipsum exercitationem quisquam sunt nemo quasi veritatis nesciunt quod nobis!
-					Numquam possimus fuga ad cupiditate magni maiores earum esse reiciendis a, obcaecati cum totam nesciunt placeat veritatis distinctio eaque debitis natus recusandae non praesentium ipsum quasi aut. Nulla, commodi exercitationem.
-					Debitis fugit recusandae nobis molestias similique cum, eligendi deserunt eveniet eaque earum reprehenderit quasi? Explicabo eum veniam vitae nemo asperiores dolorem, voluptatum expedita quas at, facere consectetur magnam a veritatis.
-					Maiores pariatur praesentium tenetur. Explicabo suscipit saepe quaerat dolore amet ipsum optio qui ipsa, corrupti dicta dolorem eaque inventore ex animi asperiores doloremque omnis facilis, adipisci facere placeat similique temporibus!
-					Ipsum distinctio, optio cupiditate veritatis, maiores accusantium dolorem nostrum, atque eaque iure repudiandae quos quidem fuga ratione blanditiis? Eveniet deleniti distinctio aliquid explicabo tempora dolorem sint quos, id deserunt minus!
-					Deleniti, facilis? Dolore facilis id ducimus minima dolor quia praesentium commodi eos facere veniam, totam officiis est quam recusandae ab asperiores accusamus enim quod quisquam, tempora nisi? Nesciunt, nobis perspiciatis?
-					Voluptatibus eligendi velit laborum quisquam quis, odit in, cupiditate, iure nobis optio ratione esse. Nisi similique corrupti maxime excepturi optio natus, accusamus quaerat soluta delectus! Corporis explicabo animi quis nemo.
-					Totam officia dolores vero ipsa voluptatibus minus, iusto nihil omnis eius soluta provident exercitationem vitae accusantium, aliquam aperiam praesentium corporis in dignissimos illo quo a. Dolorem sit dolore aperiam unde.
-					Atque quidem eaque cupiditate repudiandae quas consectetur iusto, optio tempora nostrum nam doloremque illo harum consequatur molestiae soluta ipsa distinctio. Commodi veniam provident culpa quisquam repellat delectus nobis aliquam modi?
-					Voluptatibus vitae soluta illo incidunt, alias, enim, quos corrupti quas unde velit repellendus ut doloremque sit eos laudantium modi. Reiciendis autem earum provident placeat aspernatur, nemo laudantium voluptas esse debitis.
-					Voluptas nesciunt ducimus vel dolorem molestiae rerum facere id amet fuga possimus quas earum, sed sequi, exercitationem voluptatum pariatur perspiciatis sint repellendus hic illum fugiat accusantium, ipsum nobis a! Error.
-					Pariatur, expedita amet vitae aspernatur doloribus eveniet! Excepturi autem pariatur perspiciatis accusantium qui ut harum obcaecati numquam, voluptate doloribus architecto expedita odio praesentium voluptatem voluptatibus tenetur nesciunt facere, veritatis perferendis!
-					Eaque, non perspiciatis. Eveniet sunt aut illum nemo deleniti repudiandae modi. Aliquam a veritatis dolore repudiandae nihil sunt quisquam veniam, eligendi dolorum molestiae praesentium accusantium nemo, libero fugit in illo?
-					Quo, in! Eveniet, animi quos quasi nostrum voluptate nemo ad excepturi quo assumenda ducimus adipisci, repellendus magni, natus veritatis eligendi accusantium itaque. Beatae repellat earum neque quos fugit quaerat laboriosam!
-					Quis facilis ipsum, praesentium a, aliquid ab doloribus officia in quidem quam iste. Eius nostrum a et explicabo dolorum ea quos iste veritatis, enim odio aperiam, ut expedita ex doloribus.
-					Unde ex iste fugit? Explicabo optio est recusandae amet dolore, tempore dignissimos blanditiis? Pariatur possimus, vitae quisquam tempore dolorem aperiam perspiciatis nesciunt deserunt, quia id eius consequuntur voluptatem, culpa est?
-					Accusantium delectus nulla sapiente explicabo ipsum ducimus earum aperiam dignissimos, minus nesciunt, facere modi voluptatem blanditiis ipsa ut voluptatibus laudantium velit temporibus at neque tempore cumque a iusto. Repellat, cupiditate.
-					Illo, est nulla necessitatibus perferendis placeat itaque minus officia doloribus excepturi ratione rerum obcaecati doloremque, nihil soluta suscipit maxime? Similique quos architecto illo molestiae vero eaque ipsa mollitia sunt facilis!
-					Dolores, cum quam aperiam harum eveniet unde autem similique ipsa tempore excepturi! Enim aspernatur soluta vel, facere unde vitae praesentium. Voluptas nostrum error facilis iusto, tempora dicta molestias quidem accusantium.
-					Accusamus, eaque facere, laudantium iste illum omnis sed odit tempore optio exercitationem obcaecati id iure suscipit dicta nam fugiat? Sunt ea harum maxime voluptatibus debitis consequatur temporibus incidunt! Doloremque, qui.
-					Adipisci consectetur itaque eaque sint, ea non doloribus voluptate. Voluptate voluptatem aliquid nihil ab, dolor autem explicabo necessitatibus porro ducimus accusantium facilis ut iusto! Error neque ullam doloribus assumenda culpa?
-					Rerum maiores ex sequi, consequatur ipsum qui assumenda in quas quibusdam voluptatum quam animi alias cumque, voluptas quis corporis deserunt commodi atque sint quae. Autem eos explicabo doloribus molestiae suscipit.
-					Iste rem alias repellendus ipsa, quis eaque veritatis veniam fugit quia ratione nam ut saepe fugiat cupiditate et dolor corporis quo similique officiis debitis, facere excepturi. Sequi impedit ut quo?
-					Officiis temporibus illo impedit odio, minima aliquid corporis officia, quisquam provident odit et, distinctio velit architecto quas non nobis quaerat doloremque facere? Ex doloremque quia eligendi repellendus in sequi deleniti.
-					Consectetur, iusto voluptatum voluptate sunt recusandae accusantium fugiat obcaecati repellat adipisci. Sunt architecto ducimus mollitia ab. Veniam velit officiis magni voluptatum aliquam ex odit earum vitae a, ea inventore quasi?
-					Magni nobis consectetur quia mollitia ipsum vero amet tempora sequi laborum maxime ea provident culpa nihil asperiores harum iusto minus eos est voluptatibus, deserunt quos reiciendis quod ad veniam. Eveniet?
-					Nemo facilis deleniti explicabo inventore hic voluptate dolorum fugit impedit ipsam cum reprehenderit quod nulla, at optio expedita labore omnis! Sed eos vero consectetur sit quisquam, dolorem quibusdam aliquid dolor.
-					Enim consequatur vel a libero iste quibusdam dolore quod debitis neque ullam veniam id ipsam, voluptates numquam et illum illo pariatur officiis, odit, qui sint? Nisi quam voluptates repellendus nemo.
-					Provident fugiat ab debitis. Ab saepe repellendus consectetur nemo inventore perferendis rerum totam, facere recusandae quisquam minima tenetur? Sint ea non corrupti dolores necessitatibus ducimus sapiente ab minus, dolore facilis?
-					A cupiditate enim, accusamus adipisci hic, pariatur, quas nihil magni deserunt facere nulla. Corporis commodi ex nobis voluptate, sit eos dolorum quos architecto laborum nemo quasi hic, saepe facere tempora.
-					Dolorem maiores sed eius iste tempora voluptate, doloremque quidem quod. Molestias inventore dolore maiores a dolorem, ducimus alias cupiditate obcaecati! Sunt, temporibus minus nemo praesentium ut architecto rerum eos quod.
-					Qui sint officiis porro. Ratione, dolorum exercitationem optio saepe unde cupiditate quibusdam vitae? Debitis hic odit consequatur! Voluptas rem, voluptates minus iusto culpa veritatis labore assumenda ex corporis itaque dolores.
-					At quos hic omnis facere atque magni perspiciatis enim? Dicta quasi assumenda esse aperiam similique cumque autem, ducimus voluptates animi quam molestias necessitatibus quidem incidunt, qui expedita laboriosam temporibus sequi.
-					Ullam cumque qui atque praesentium mollitia voluptate ab similique quasi. Nam, facere necessitatibus debitis sequi doloribus ullam laborum maxime nihil consequuntur unde, magni saepe quia eligendi inventore repellat odit quidem?
-					Omnis aliquid consequuntur error eius, maxime saepe veniam quas exercitationem voluptatibus quis dolor sed modi eaque harum, quasi iusto, adipisci facilis voluptas nulla ipsam voluptatum! Eius praesentium id at dignissimos?
-					Eaque commodi eum placeat minus at dolore fugit? A quasi, nesciunt vitae minima quibusdam sint quidem possimus voluptatem, obcaecati commodi repellendus ab saepe eius non mollitia ullam veritatis rerum eveniet?
-					Commodi quod illo dolores dicta iusto enim similique perferendis necessitatibus ipsum, quam temporibus alias omnis, nam mollitia nisi dolorum, excepturi tempora! Blanditiis ea saepe dolore dolorem! Dolorum aliquid officia fugiat.
-					Quis maiores distinctio velit odio minima sint molestias? Nesciunt sint fugit ab, iusto atque consectetur? Dolor sapiente, quis quasi, enim ducimus fuga at dignissimos eaque explicabo facilis officiis consequuntur similique.
-					Accusantium id provident harum nulla atque at soluta ab odit autem consectetur. Similique quaerat dolore tempora repellat harum pariatur fugit aperiam suscipit architecto consectetur, incidunt, enim eos fuga dolores nemo.
-					Amet fuga ea quo eligendi ratione, nulla suscipit voluptates saepe cum dolor esse voluptatibus veniam aperiam, laudantium hic perferendis. Cumque, deleniti iusto culpa facere libero magnam aliquam ad nulla et?
-					Id odio culpa eveniet officiis magnam nihil vel aperiam! Eos hic vitae quos repellat, voluptatem quia. Vitae dolores eos deleniti? Aliquid, necessitatibus. Ullam doloremque quam quod molestiae obcaecati animi repellat.
-					Dicta pariatur delectus dolorem dignissimos ipsa. Aperiam, cum exercitationem! Excepturi exercitationem itaque minima nihil! Quis, velit minus pariatur vitae modi nulla? Corporis itaque fugiat molestiae at mollitia. Aliquid, aut eaque!
-					Repellat quae sed natus dignissimos commodi ea. Culpa accusantium ab voluptas similique neque rerum odio non, et deleniti necessitatibus nobis dolore quam laborum. At sequi itaque inventore, assumenda unde quasi.
-					Aliquam, eligendi nam! Molestiae sapiente ullam fuga corrupti minus repudiandae sunt porro ducimus numquam consequuntur iusto, perspiciatis, cupiditate natus voluptas? Natus quae qui rerum officia veritatis ea, nesciunt aut quia.
-					Voluptatibus, nam? Molestiae recusandae est excepturi, quas soluta veniam error eum adipisci eveniet quod alias omnis, officia esse quisquam praesentium corporis debitis, vero labore eius harum eaque corrupti! Numquam, id!
-					Magnam corporis iure ab neque nam officia? Molestias molestiae tenetur tempora ducimus, ullam, et reprehenderit eligendi non voluptatum atque praesentium doloribus accusamus quam voluptatibus veritatis sit, dolorem corrupti blanditiis pariatur?
-					Consequuntur obcaecati totam, ab unde illum eum, distinctio numquam hic quas nobis qui animi! Magni vitae officiis incidunt eligendi labore architecto suscipit doloribus, commodi soluta rem provident et asperiores cum!
-					Odit inventore ipsam repudiandae. Facilis rerum, itaque, saepe facere alias obcaecati aspernatur dolor voluptate ex vero quis distinctio beatae officia nemo animi? Libero asperiores id obcaecati, suscipit alias iusto iste.
-					Repudiandae soluta laboriosam obcaecati veniam dolore ut quae illum dolores eius sed. Voluptatum, suscipit amet ut non molestiae animi distinctio sapiente dolor maxime, facere ipsam repellendus ratione maiores obcaecati vitae!
-					Fuga animi corporis ipsum voluptatum qui aliquid deserunt officiis mollitia consectetur delectus sint rerum esse aliquam similique incidunt, rem sapiente explicabo nam laboriosam dolorum cumque. Aliquid dolor velit laudantium praesentium?
-					Non tenetur perspiciatis ex consequuntur aut autem nihil at recusandae dolorum, quidem dolores assumenda consectetur aperiam. Quibusdam temporibus voluptatum atque esse suscipit, dolore ut ad voluptatibus et enim. Blanditiis, odio.
-					Ab eius voluptatum qui alias labore reiciendis voluptates quae, veritatis itaque ducimus mollitia saepe non rem beatae aut? Temporibus mollitia quidem eligendi in doloremque, a voluptatibus quibusdam. Doloremque, necessitatibus eum.
-					Dolores nihil, quam eum illum accusamus optio repellendus alias tempora perferendis incidunt voluptate, possimus consequatur maxime fugiat quia exercitationem aliquam. Incidunt aspernatur quisquam eveniet illo labore sint sunt numquam officia.
-					Consequatur repellendus animi officiis distinctio tempore rerum assumenda quisquam voluptatum, pariatur dolores tempora facilis laboriosam harum repellat placeat at unde ex ut fuga facere esse soluta consequuntur vel? Debitis, tempore!
-					Delectus labore deserunt obcaecati quidem, incidunt nobis sit exercitationem, et reprehenderit tenetur inventore laborum iure odit ullam enim harum quaerat expedita dolor iusto. Labore quo quisquam, natus voluptatibus amet dolores!
-					Quia, iusto vel culpa voluptas adipisci magnam error sit? Ea nam eaque illo consectetur vel voluptatem temporibus officiis inventore commodi atque. Reprehenderit ex placeat laborum eaque dolorem, consequuntur incidunt deserunt.
-					Cumque repellat veritatis inventore earum harum dolorem temporibus beatae dignissimos laborum placeat neque natus, fuga quas veniam error alias. Quod ratione reprehenderit quam quos quidem recusandae fugit ipsum iste culpa.
-					Labore, aperiam! In quam cum doloribus nesciunt id qui quod, voluptatum corrupti, voluptatibus amet earum maiores culpa architecto dolorum quos veritatis error quae rerum repellendus cumque alias dignissimos aliquid laudantium.
-					Nihil quo ut rerum doloribus tempora vero, minima suscipit repudiandae obcaecati laboriosam corporis sint fuga necessitatibus similique voluptate facere sunt! Quam laboriosam ratione velit. Optio voluptate earum mollitia ex nostrum.
-					Nihil, enim. Incidunt exercitationem similique saepe, at fugiat, labore error dignissimos reiciendis ipsa veniam quidem commodi pariatur adipisci quibusdam aperiam reprehenderit impedit veritatis. Animi atque delectus officiis aspernatur cupiditate molestiae.
-					Totam adipisci, distinctio iste deserunt veritatis neque? Voluptates, soluta fugiat unde autem necessitatibus qui deserunt amet ut quisquam odio labore ratione repellat quae sequi molestiae, dolores pariatur accusantium eligendi itaque.
-					Saepe incidunt modi non aliquid, sequi illo, sint expedita sunt quibusdam, dolor dignissimos dolore mollitia magni omnis aut. Molestias animi voluptatibus quisquam a voluptatum iste cumque illum nesciunt odit ipsa!
-					Porro cupiditate ducimus in nisi blanditiis eligendi sint, veritatis quis architecto illum nostrum. Minus iste consequatur dolorem enim ea autem fugit eaque delectus, veniam nesciunt laborum at ipsum fugiat ab.
-					Repudiandae, possimus pariatur aut in recusandae rem incidunt numquam laborum accusantium perferendis quo quibusdam reiciendis, neque quam quae alias adipisci aperiam blanditiis ipsum. Fugit deleniti non sunt reprehenderit veritatis doloribus.
-					Possimus deleniti natus asperiores eos blanditiis, unde nostrum, ullam sint dicta nihil illo voluptatum corrupti at sapiente quod vitae velit enim? Placeat, molestiae itaque sequi tempore voluptatibus ullam omnis? Vitae.
-					Repudiandae iure similique est ducimus obcaecati nostrum ab quisquam quidem alias eius officiis, optio culpa molestiae sequi ut aliquam velit ex beatae nobis maxime minima aliquid sunt! Nisi, iste quaerat.
-					Facere amet illum voluptatum molestias! Eius tempora blanditiis, architecto commodi dolore, ducimus deleniti iusto minus harum, ipsam est distinctio totam! Vero, ea inventore quas blanditiis architecto tempora pariatur porro in.
-					Ratione, vel. Illo quis ullam asperiores est, aut aliquid doloremque modi saepe earum deserunt esse hic vitae quia natus veniam porro tempora in reiciendis amet. Ducimus ab similique sequi cumque.
-					Dolorum ratione aspernatur ea natus deleniti dolor repellendus cum qui totam possimus. Qui ad deleniti voluptatibus reprehenderit laboriosam nobis rerum, consequatur natus. Tempora, non? Error a praesentium maxime repudiandae facilis?
-					Minus numquam fugiat sequi possimus a distinctio repudiandae hic quaerat perspiciatis doloribus necessitatibus at illo inventore dignissimos ab incidunt reiciendis iure ut temporibus, recusandae eaque. Fugit eos similique neque laboriosam.
-					Harum, consequuntur qui! Cumque omnis illum iure quasi minima reiciendis inventore numquam nisi quae laboriosam veniam aliquam sunt, quis incidunt eum! Voluptatibus suscipit veniam placeat quidem numquam vitae, nesciunt nostrum?
-					Magnam esse, nulla libero perferendis minima a blanditiis, temporibus quos quia rem, eum dolores soluta quasi nisi totam ipsa animi possimus. Tempora ad repudiandae error ipsum maxime, impedit fugiat nisi?
-					Vero, hic distinctio expedita autem quos iure sint nostrum? Mollitia atque voluptatum, expedita, amet necessitatibus dignissimos provident, reprehenderit tenetur veritatis tempora corrupti cupiditate dicta magnam dolore laudantium excepturi. Officia, neque!
-					Explicabo ipsam voluptatibus odit quidem mollitia sapiente aliquam recusandae sint eligendi ad repellat laudantium fuga at aut vero, eos reprehenderit voluptatum adipisci quibusdam. Similique aliquid provident eius totam facere. Ex!</p>
-				</div>
-				<div class="rules-button">
-					<button id="rulesBack">Назад</button>
-				</div>
-
-			</div>
-
-			<div class="page verification">
-				<div class="header">
-					<div class="header-logo">
-						<img src="src/logo.png" alt="logo">
-					</div>
-					<div class="header-name">
-						<p>Верификация аккаунта</p>
-					</div>
-					<div class="header-button">
-
-					</div>
-				</div>
-
-				<div class="title">Ваши данные</div>
-
-				<div class="form form-reg">
-					<div class="form-input">
-						<div class="input">
-							<input type="text" name="" id="regLogin" placeholder="Имя">
-						</div>
-						<div class="input-notification">
-							<p id="regLoginMessage">Заполните поле!</p>
-						</div>
-					</div>
-
-					<div class="form-input">
-						<div class="input">
-							<input type="text" name="" id="regPass" placeholder="Фамилия">
-						</div>
-						<div class="input-notification">
-							<p id="regPassMessage">Заполните поле!</p>
-						</div>
-					</div>
-
-					<div class="form-input">
-						<div class="input">
-							<input type="text" name="" id="regPhone" placeholder="Отчество">
-						</div>
-						<div class="input-notification">
-							<p id="regPhoneMessage">Заполните поле!</p>
-						</div>
-					</div>
-
-					<div class="form-input">
-						<div class="input">
-							<input type="text" name="" id="regMail" placeholder="День рождения">
-						</div>
-						<div class="input-notification">
-							<p id="regMailMessage">Заполните поле!</p>
-						</div>
-					</div>
-
-					
-
-					<div class="form-button">
-						<div class="button skip-verification-button">
-							<button id="_regEnter">Пропустить</button>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="terms terms-reg">
-					<div class="terms-authorization" id="_authEnter">
-						<p>Сохранить</p>
-					</div>
-				</div>
-
-				<div class="footer footer-reg">
-					<div class="footer-box footer-box-reg" id="rulesEnter">
-						<p>Я прочитал и согласен с политикой конфиденциальности. <span>Подробнее</span></p>
-					</div>
-				</div>
-			</div>
-
-			<div class="page main">
-				<div class="header main-header">
-					<div class="main-footer-img header-img-bg">
-						<img src="src/top_left_head.png" alt="">
-					</div>
-					<div class="header-button reload-button header-button-main">
-						<img id="headerButton" src="src/svg/reload_b0mkt0syhw79.svg" alt="logo">
-					</div>
-					<div class="header-name">
-						<p id="main-header-text">Новости</p>
-					</div>
-					<div class="header-logo shop-button">
-						<img src="src/svg/shopping_cart_gq2oevzh3q89.svg" alt="logo">
-					</div>
-				</div>
-
-				<div class="window profile-bg">
-					<div class="profile-wrapper">
-						<div class="profile-img">
-							<img class="profile-img-bg" src="src/profile.webp" alt="">
-						</div>
-						<div class="profile-name-wrapper">
-							<div class="profile-name-box">
-								<p class="profile-name">Александр Осипов</p>
-							</div>
-						</div>
-						<div class="profile-info">
-							<div class="profile-info-block">
-								<div class="profile-info-box profile-info-data">
-									<p class="profile-login">Логин:</p>
-									<p class="profile-mail">Почта: </p>
-									<p class="profile-date_birthday">День рождения:</p>
-									<p class="profile-phone">Номер телефона:</p>
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-
-				<div class="window window-news" style="position: relative;">
-
-					<div class="news-description-wrapper">
-						<div class="news-description-content">
-							
-						</div>
-					</div>
-
-					<div class="news-block">
-						<div class="news-wrapper">
-						
-
-							<div class="news-item">
-								<div class="news-item-title">
-									<p class="news-title">Новости</p>
-								</div>
-								<div class="news-item-img">
-									<div class="img-loader">
-										<div class="curcle"></div>
-									</div>
-									<img class="news-img" src="" alt="">
-	
-									<div class="news-read">
-										<p>Читать подробнее</p>
-									</div>
-								</div>
-							</div>
-						</div>
-	
-						<div class="news-wrapper">
-							<div class="news-item">
-								<div class="news-item-title">
-									<p class="news-title">Новости</p>
-								</div>
-								<div class="news-item-img">
-									<div class="img-loader">
-										<div class="curcle"></div>
-									</div>
-									<img class="news-img" src="" alt="">
-	
-									<div class="news-read">
-										<p>Читать подробнее</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="news-wrapper">
-							<div class="news-item">
-								<div class="news-item-title">
-									<p class="news-title">Новости</p>
-								</div>
-								<div class="news-item-img">
-									<div class="img-loader">
-										<div class="curcle"></div>
-									</div>
-									<img class="news-img" src="" alt="">
-	
-									<div class="news-read">
-										<p>Читать подробнее</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="news-wrapper">
-							<div class="news-item">
-								<div class="news-item-title">
-									<p class="news-title">Новости</p>
-								</div>
-								<div class="news-item-img">
-									<div class="img-loader">
-										<div class="curcle"></div>
-									</div>
-									<img class="news-img" src="" alt="">
-	
-									<div class="news-read">
-										<p>Читать подробнее</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-				<div class="window window-table">
-					<div class="table-wrapper">
-						<div class="table-item">
-							<div class="table-number table-item-child">
-								<p class="text-table">#</p>
-							</div>
-							<div class="table-img table-item-child">
-								<!-- <img src="src/logo.png" alt=""> -->
-							</div>
-							<div class="table-name table-item-child">
-								<p class="text-table">Команда</p>
-							</div>
-							<div class="table-i table-item-child">
-								<p class="text-table">И</p>
-							</div>
-							<div class="table-o table-item-child">
-								<p class="text-table">О</p>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-				<div class="window actual-matchs">
-					<div class="actual-matchs-wrapper">
-						<!-- <div class="actual-matchs-item">
-							<div class="actual-matchs-item-box">
-								<div class="actual-matchs-date">
-									<p class="actual-matchs-date-text">26.05.2023 17:00 (18:00 Мск)</p>
-								</div>
-								<div class="actual-matchs-info">
-									<div class="actual-matchs-team-name">
-										<p>Балтика</p>
-									</div>
-									<div class="actual-matchs-team-logo">
-										<img src="src/logo.png" alt="">
-									</div>
-
-									<div class="actual-matchs-team-count">
-										<p>20:20</p>
-									</div>
-
-									<div class="actual-matchs-team-logo">
-										<img src="src/logo.png" alt="">
-									</div>
-									<div class="actual-matchs-team-name">
-										<p>Балтика</p>
-									</div>
-								</div>
-							</div>
-						</div> -->
-
-						
-						
-					</div>
-				</div>
-
-				<div class="main-footer">
-		
-					<div class="navItem">
-						<img src="src/svg/nav/profile_ibk8r88f1u3z.svg" alt="">
-					</div>
-					<div class="navItem">
-						<img src="src/svg/nav/news_clabsp37gko5.svg" alt="">
-					</div>
-					
-					<div class="navItem">
-						<img src="src/svg/nav/trophy_football_cup_pjlj66v7wobe.svg" alt="">
-					</div>
-					<div class="navItem">
-						<img src="src/svg/nav/ball_4s7kfsuy7pcd.svg" alt="">
-					</div>
-
-					<div class="navItem">
-						<img src="src/svg/nav/ticket_0eym4rgwe520.svg" alt="">
-					</div>
-
-					<div class="main-footer-img">
-						<img src="src/bot_right_head.png" alt="">
-					</div>
-				</div>
-			</div>
-
-		</div>
-		<script src="js/request.js?v=1.2.1"></script>
-
-		<script src="js/main.js?v=1.2.1"></script>
-		<script src="js/form.js?v=1.2.1"></script>
-		<script src="js/index.js?v=1.2.1"></script>
-	</body>
+        <div class="loader-img">
+            <img src="src/logo.png" alt="man">
+        </div>
+        <div class="loader-text">
+            
+        </div>
+        <div class="loader-curcle">
+            <div class="curcle" style="border-color: #da1414;" id = "loaderCurcle"></div>
+        </div>
+    </div>
+    
+</body>
 </html>
